@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 
+var oneLinerJoke = require('one-liner-joke');
+
 app.get('/test', function(req,res){
     res.send("This is route 2");
 });

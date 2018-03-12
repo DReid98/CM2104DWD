@@ -20,9 +20,9 @@ app.get('/joke', function(req,res) {
 
 
 app.get('/add', function(req,res) {
-    var x = req.query.5;
-    var y = req.query.6;
-    res.send("X + Y = " + parseInt(x+y));
+    var x = req.query.x;
+    var y = req.query.y;
+    res.send("X + Y = " + (parseInt(x) + parseInt(y)));
 });
 
 

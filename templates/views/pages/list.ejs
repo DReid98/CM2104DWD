@@ -1,0 +1,57 @@
+<!-- views/pages/list.ejs -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+
+    <% include ../partials/head.ejs %>
+
+    <!-- Accordion Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/css/liststyle.css">
+</head>
+
+<body>
+
+<header>
+    <% include ../partials/header.ejs %>
+</header>
+
+<main>
+    <section class="page">
+
+        <!-- Filter search bar code -->
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search...">
+        <!-- Sort combobox code -->
+        <div class="float_center">
+            <label for="sort-by" class="inline">Sort by:</label>
+            <select id="sort-by" class="all">
+                <option value="a-z" id="a-z">A-Z</option>
+                <option value="z-a" id="z-a">Z-A</option>
+                <option value="height" id="height">Height</option>
+                <option value="location" id="location">Location</option>
+            </select>
+        </div>
+        <!-- Accordion code -->
+        <section class="content">
+            <div id="accordion">
+
+            </div>
+        </section>
+
+    </section>
+</main>
+
+<footer>
+    <% include ../partials/footer.ejs %>
+</footer>
+
+<% include ../partials/scripts.ejs %>
+
+<script src="/js/accordion.js" type="text/javascript"></script>
+
+</body>
+
+</html>

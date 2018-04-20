@@ -25,6 +25,11 @@ app.get('/add', function(req,res) {
     res.send("X + Y = " + (parseInt(x) + parseInt(y)));
 });
 
-
+app.get('/calc', function(req,res){
+    var x = req.query.x;
+    var y = req.query.y;
+    var op = req.query;
+    if(op.equals("add"))
+})
 
 app.listen(8080);

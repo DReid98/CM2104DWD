@@ -11,7 +11,7 @@ $(document).ready(function() {
 
     $.ajax({
       type: "GET",
-      url: "/js/munrodata.json",
+      url: "/json/munrodata.json",
       success: function(result)
       {
         console.log(result.munros);

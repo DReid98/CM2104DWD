@@ -11,7 +11,7 @@ $(document).ready(function() {
 
     $.ajax({
       type: "GET",
-      url: "munrodata.json",
+      url: "/js/munrodata.json",
       success: function(result)
       {
         console.log(result.munros);
@@ -19,7 +19,7 @@ $(document).ready(function() {
 
         for(var i = 0; i < munros.length; i++)
         {
-          var output = "<h4 class='munrotitle'>" + munros[i].name + "<img class='bMount' id='bMount" + i + "' src='Mountain_Pins/blueMnt.png' alt='Blue Mountain'>";
+          var output = "<h4 class='munrotitle'>" + munros[i].name + "<img class='bMount' id='bMount" + i + "' src='/img/blueMnt.png' alt='Blue Mountain'>";
 
           output += "</h4><div class='whiteback'><table><tr><td>Description: </td><td>" + munros[i].description + "</td></tr><tr><td>Region: </td><td>" + munros[i].region + "</td></tr><tr><td>Height: </td><td>" + munros[i].height + "</td></tr><tr><td>Latitude: </td><td>" + munros[i].latitude + "</td></tr><tr><td>Longitude: </td><td>" + munros[i].longitude + "</td></tr><tr><td>Grid Reference: </td><td>" + munros[i].gridReference + "</td></tr><tr><td>Difficulty: </td><td>";
 
@@ -30,11 +30,11 @@ $(document).ready(function() {
             height = parseInt(height);
             
             if (height > 1219) {
-                output += "<img src='Mountain_Pins/redMnt.png' alt='Red Mountain'><img src='Mountain_Pins/redMnt.png' alt='Red Mountain'><img src='Mountain_Pins/redMnt.png' alt='Red Mountain'>";
+                output += "<img src='/img/redMnt.png' alt='Red Mountain'><img src='/img/redMnt.png' alt='Red Mountain'><img src='/img/redMnt.png' alt='Red Mountain'>";
             } else if (height > 1067) {
-                output += "<img src='Mountain_Pins/yellowMnt.png' alt='Yellow Mountain'><img src='Mountain_Pins/yellowMnt.png' alt='Yellow Mountain'>";
+                output += "<img src='/img/yellowMnt.png' alt='Yellow Mountain'><img src='/img/yellowMnt.png' alt='Yellow Mountain'>";
             } else if (height > 914) {
-                output += "<img src='Mountain_Pins/greenMnt.png' alt='Green Mountain'>";
+                output += "<img src='/img/greenMnt.png' alt='Green Mountain'>";
             }
 
           output += "</td></tr><tr><td>Climbed: </td><td><input type='checkbox' id='checkBox" + i + "' onclick='listenerEx(" + i + ")'></td></tr></table></div>";

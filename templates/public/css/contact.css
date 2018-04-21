@@ -12,12 +12,12 @@ footer, div {
 
 /*Page Title*/
 #title {
-    float: left;
-    margin-left: 14px;
-    padding-top: 20px;
-    padding-right: 30px;
-    padding-bottom: 80px;
-    padding-left: 800px;
+    /*float: left;*/
+    /*margin-left: 14px;*/
+    /*padding-top: 20px;*/
+    /*padding-right: 30px;*/
+    /*padding-bottom: 80px;*/
+    /*padding-left: 800px;*/
     font-family: Rockwell;
     color: #0B486B;
 }
@@ -30,22 +30,23 @@ footer, div {
             /*height: 50%;*/
             /*widht: 100%;}*/
 
-#form {display: inline-block;
-       padding: 620px;
-       padding-top: 0px;
-       padding-bottom: 0px;
-       text-align: center;
-       justify-content: space-between;
+#form {
+    display: inline-block;
+       /*padding: 620px;*/
+       /*padding-top: 0px;*/
+       /*padding-bottom: 0px;*/
+       text-align: left;
+       /*justify-content: space-between;*/
        color: #0B486B;
        font-family: Rockwell;}
-       input {width: 200%;}
+       /*input {width: 200%;}*/
 
 #Button {display: inline-block;
        padding: 260px;
        padding-top: 20px;
        padding-bottom: 30px;
        text-align: center;}
-
+/*
 #text {
        width: 650px;
        height: 100px;
@@ -60,3 +61,4 @@ footer, div {
        color: #0B486B;
        font-family: Rockwell;
 }
+*/

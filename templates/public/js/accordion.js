@@ -129,10 +129,13 @@ function getAccordion(list,session) {
                     // $("#bMount" + i).show();
                     currentFunction();
                 }
+                else {
+                    currentFunction();
+                }
 
             }
             $( "#accordion" ).accordion({collapsible:true, active: false});
-            $(".bMount").hide();
+            // $(".bMount").hide();
         }
     });
 }

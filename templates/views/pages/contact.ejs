@@ -8,6 +8,9 @@
     <title></title>
 
     <% include ../partials/head.ejs %>
+
+    <link rel="stylesheet" href="/css/contact-style.css">
+
 </head>
 
 <body>
@@ -18,7 +21,42 @@
 
     <main>
         <section class="page">
+            <form id="form">
+                <table border="0" cellspacing= "5" cellpadding="5">
 
+
+                    <tr id= "name">
+                        <td>NAME:</td>
+                        <td>
+                            <input type="textarea" name="NAME">
+                        </td>
+                    </tr>
+
+
+                    <tr id= "email">
+                        <td>EMAIL ADDRESS</td>
+                        <td>
+                            <input type="textarea" name="EMAIL ADDRESS">
+                        </td>
+                    </tr>
+
+                    <tr id="Inquiry">
+                        <td>INQUIRY</td>
+                        <td>
+                            <input type="textarea" name="Inquiry">
+                        </td>
+                    </tr>
+                </table>
+                <div id="Button">
+                    <input type="button" value="Submit" onclick="openWin()">
+                    <script>
+                        function openWin() {
+                            window.open("file:///H:/github/CM2104/contanct%20page/new.html");
+                        }
+                    </script>
+                </div>
+
+            </form>
         </section>
     </main>
 

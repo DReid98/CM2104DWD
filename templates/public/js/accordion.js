@@ -1,10 +1,10 @@
 function listenerEx(i,name) {
     if($("#checkBox" + i).is(":checked")) {
         $("#bMount" + i).show();
-        bagMunro(name);
+        // bagMunro(name);
     } else {
         $("#bMount" + i).hide();
-        removeMunro(name);
+        // removeMunro(name);
     }
 }
 

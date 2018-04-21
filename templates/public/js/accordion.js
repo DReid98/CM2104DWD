@@ -118,14 +118,17 @@ function getAccordion(list,session) {
                     console.log(i);
                 });
 
-                if (session && $.inArray(munros[i].name, list) != -1) {
-                    console.log(munros[i].name);
-                    $("#checkBox" + i).setAttr('checked',true);
-                    // currentFunction();
-                }
+
 
 
                 displayMunros.append(output);
+
+                if (session && $.inArray(munros[i].name, list) != -1) {
+                    console.log(munros[i].name);
+                    $("#checkBox" + i).attr('checked',true);
+                    // currentFunction();
+                }
+
             }
             $( "#accordion" ).accordion({collapsible:true, active: false});
             $(".bMount").hide();

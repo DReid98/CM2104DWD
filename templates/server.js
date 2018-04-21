@@ -20,6 +20,9 @@ const app = express();
 //tell express to use sessions
 app.use(session({secret: 'example'}));
 
+//Set session as true for testing
+session.loggedin = true;
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));

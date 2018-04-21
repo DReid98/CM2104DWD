@@ -181,7 +181,7 @@ app.get('/munrolist', function(req,res) {
 
 
 // add munro to user list
-app.get('/bagmunro', function(req,res) {
+app.post('/bagmunro', function(req,res) {
     var munro = req.query.id;
 
     // db.collection('users').update({"username":req.session.username},{$addToSet: {"bagged": {$each :[munro]}}});
@@ -192,7 +192,7 @@ app.get('/bagmunro', function(req,res) {
 });
 
 // remove munro from user list
-app.get('/removemunro', function(req,res) {
+app.post('/removemunro', function(req,res) {
     var munro = req.query.id;
 
     // db.collection('users').update({"username":req.session.username},{$pull: {"bagged": [munro]}});

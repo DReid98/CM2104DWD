@@ -119,7 +119,8 @@ function getAccordion(list,session) {
                 });
 
                 if (session && $.inArray(munros[i].name, list)) {
-                    $("#checkbox" + i).attribute('checked',true);
+                    // var id = "#checkbox" + i;
+                    $("#checkBox" + i).prop('checked',true);
                     currentFunction();
                 }
 

@@ -50,6 +50,10 @@
     text-align: justify;
 }
 
+.tabcontent p img {
+    text-align: center;
+}
+
 .clearfix{
   clear:both;
 }
@@ -71,8 +75,8 @@
 }
 
 #Pic4 {
-    width: 400px;
-  padding-left: 580px;
+
+  /*padding-left: 580px;*/
 }
 
 #Pic5 {

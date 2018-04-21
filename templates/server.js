@@ -22,6 +22,8 @@ app.use(session({secret: 'example'}));
 
 //Set session as true for testing
 session.loggedin = true;
+var userSession = req.session;
+userSession.username = "genericuser033";
 
 app.use(bodyParser.urlencoded({
     extended: true

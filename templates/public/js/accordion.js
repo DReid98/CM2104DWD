@@ -172,6 +172,7 @@ $(document).ready(function() {
         else {
             mBagged = ["unknown"];
             getAccordion(mBagged,sessdata);
+
         }
     })
 

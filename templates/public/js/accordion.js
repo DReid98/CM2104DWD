@@ -126,7 +126,7 @@ function getAccordion(list,session) {
                 if (session && $.inArray(munros[i].name, list) != -1) {
                     console.log(munros[i].name);
                     $("#checkBox" + i).attr('checked',true);
-                    $("#checkBox" + i).onload(function(){
+                    $("#checkBox" + i).on('load',function(){
                         currentFunction();
                     });
                     // currentFunction();

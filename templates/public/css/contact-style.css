@@ -1,7 +1,8 @@
-body {
-    margin: auto;
-/*    width: 80%;*/
-}
+/*CSS in main_style.css*/
+/*body {*/
+    /*margin: auto;*/
+/*!*    width: 80%;*!*/
+/*}*/
 
 /*
 #band {
@@ -9,15 +10,17 @@ body {
     height: 10px;
 }
 */
-nav {
-    width: 100%;
-    justify-content: center;
-    display: flex;
-/*    justify-content: center;*/
-/*    align-content: center;*/
-/*    background-color: beige;*/
-    margin: auto;
-}
+
+/*CSS for nav in main_style.css*/
+/*nav {*/
+    /*width: 100%;*/
+    /*justify-content: center;*/
+    /*display: flex;*/
+/*!*    justify-content: center;*!*/
+/*!*    align-content: center;*!*/
+/*!*    background-color: beige;*!*/
+    /*margin: auto;*/
+/*}*/
 
 ul {
     list-style-type: none;
@@ -61,104 +64,20 @@ h1 {
 }
 
 
-header section {
-    display: inline-block;
-    background-color: #FFFFFF;
-    /*border-top: 8px solid #3B8686;*/
-    /*border-bottom: 8px solid #79BD9A;*/
-}
 
-header {
-    /*border-bottom: 2px solid #0B486B;*/
-    border-top: 10px solid #0B486B;
-    height: 80px;
-}
+/*#info {*/
+    /*margin: auto;*/
+    /*width: 90%;*/
+/*}*/
 
-#left-section {
-    width: 40%;
-    float: left;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-/*    border-bottom: 5px solid purple;*/
-}
-
-#left-section img {
-    float: left;
-    height: 50px;
-}
-
-#left-section h1 {
-    float: left;
-    margin-left: 14px;
-    font-family: Rockwell;
-    color: #0B486B;
-}
-
-#right-section {
-    width: 60%;
-    float: left;
-    display: flex;
-    height: 80px;
-}
-
-
-main {
-    margin: auto;
-}
-
-main img {
-    display: block;
-    margin: auto;
-    width: 100%;
-/*    margin-left: auto;*/
-/*    margin-right: auto;*/
-
-    border-bottom: 10px solid #0B486B;
-}
-
-#info {
-    margin: auto;
-    width: 90%;
-}
-
-#title {
-/*    margin: auto;*/
-    text-align: center;
-}
+/*#title {*/
+/*!*    margin: auto;*!*/
+    /*text-align: center;*/
+/*}*/
 
 p {
     text-align: justify
 }
 
 
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
 
-.sticky + main {
-    padding-top: 80px;
-}
-
-
-footer {
-    height: 50px;
-    color: #0B486B;
-    border-top: 10px solid #0B486B;
-    font-family: Rockwell;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-footer div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 90%;
-    margin: auto;
-}

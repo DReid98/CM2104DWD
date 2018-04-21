@@ -186,6 +186,8 @@ app.get('/bagmunro', function(req,res) {
 
     db.collection('users').update({"username":req.session.username},{$addToSet: {"bagged": {$each :[munro]}}});
 
+    res.send("Done");
+
 });
 
 // remove munro from user list
@@ -193,6 +195,8 @@ app.get('/removemunro', function(req,res) {
     var munro = req.munro;
 
     db.collection('users').update({"username":req.session.username},{$pull: {"bagged": [munro]}});
+
+    res.send("Done");
 });
 
 // info page

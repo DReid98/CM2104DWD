@@ -15,6 +15,9 @@ function bagMunro(mName) {
         url: '/bagmunro',
         data: {
             munro: mName
+        },
+        success: function(response) {
+            console.log(response);
         }
     })
 }
@@ -25,6 +28,9 @@ function removeMunro(mName) {
         url: '/removemunro',
         data: {
             munro: mName
+        },
+        success: function(response) {
+            console.log(response);
         }
     })
 }

@@ -81,6 +81,11 @@ nav {
     z-index: 2;
 }
 
+#nav-logout,
+#nav-profile {
+    display: none;
+}
+
 .sticky {
     position: fixed;
     top: 0;

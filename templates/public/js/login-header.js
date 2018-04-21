@@ -1,6 +1,6 @@
 //If user logged in - show logout and profile nav buttons
 
-$(document).ready(function() {
+function checkUser() {
     $.ajax({
         type: "GET",
         url: "/getsession",
@@ -23,5 +23,5 @@ $(document).ready(function() {
                 $('#nav-logout').css("display","none");
             }
         }
-    })
-});
+    });
+}

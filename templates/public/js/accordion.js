@@ -1,12 +1,10 @@
-function listenerEx(i,name) {
-    console.log(name);
-    // var normalName = returnHtml(name);
+function listenerEx(i) {
     if($("#checkBox" + i).is(":checked")) {
         $("#bMount" + i).show();
-        // bagMunro(normalName);
+        // bagMunro(i);
     } else {
         $("#bMount" + i).hide();
-        // removeMunro(normalName);
+        // removeMunro(i);
     }
 }
 
@@ -16,7 +14,10 @@ function bagMunro(mName) {
         type: "POST",
         url: '/bagmunro',
         data: {
-            munro: mName
+            id: i
+        },
+        success: function(response) {
+            console.log(response);
         }
     })
 }
@@ -26,7 +27,10 @@ function removeMunro(mName) {
         type: "POST",
         url: '/removemunro',
         data: {
-            munro: mName
+            id: i
+        },
+        success: function(response) {
+            console.log(response);
         }
     })
 }
@@ -148,7 +152,7 @@ function getAccordion(list,session) {
 
                 var safeName = escapeHtml(munros[i].name);
 
-                output += "</td></tr><tr><td>Climbed: </td><td><input type='checkbox' id='checkBox" + i + "' onclick='listenerEx(" + i + "," + safeName + ")'></td></tr></table></div>";
+                output += "</td></tr><tr><td>Climbed: </td><td><input type='checkbox' id='checkBox" + i + "' onclick='listenerEx(" + i + ")'></td></tr></table></div>";
 
                 currentFunction = function() {
                     if($("#checkBox" + i).is(":checked")) {

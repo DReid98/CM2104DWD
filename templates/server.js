@@ -182,20 +182,21 @@ app.get('/munrolist', function(req,res) {
 
 // add munro to user list
 app.get('/bagmunro', function(req,res) {
-    var munro = req.munro;
+    var munro = req.id;
 
-    db.collection('users').update({"username":req.session.username},{$addToSet: {"bagged": {$each :[munro]}}});
+    // db.collection('users').update({"username":req.session.username},{$addToSet: {"bagged": {$each :[munro]}}});
 
+    console.log(munro);
     res.send("Done");
 
 });
 
 // remove munro from user list
 app.get('/removemunro', function(req,res) {
-    var munro = req.munro;
+    var munro = req.id;
 
-    db.collection('users').update({"username":req.session.username},{$pull: {"bagged": [munro]}});
-
+    // db.collection('users').update({"username":req.session.username},{$pull: {"bagged": [munro]}});
+    console.log(munro);
     res.send("Done");
 });
 

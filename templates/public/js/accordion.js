@@ -5,17 +5,19 @@ function listenerEx(i) {
         $("#bMount" + i).hide();
     }
 }
-
+/*
 $(document).ready(function() {
     var displayMunros = $('#accordion');
 
     $.ajax({
       type: "GET",
-      url: "/json/munrodata.json",
+      url: "/munros",
       success: function(result)
       {
-        console.log(result.munros);
-        var munros = result.munros;
+        // console.log(result.munros);
+          console.log(result);
+        // var munros = result.munros;
+          var munros = result;
 
         for(var i = 0; i < munros.length; i++)
         {
@@ -62,6 +64,117 @@ $(document).ready(function() {
       }
   });
 });
+*/
+
+
+function getAccordion(list,session) {
+    var displayMunros = $('#accordion');
+
+    $.ajax({
+        type: "GET",
+        url: "/munros",
+        success: function(result)
+        {
+            // console.log(result.munros);
+            console.log(result);
+            // var munros = result.munros;
+            var munros = result;
+
+            for(var i = 0; i < munros.length; i++)
+            {
+                var output = "<h4 class='munrotitle'>" + munros[i].name + "<img class='bMount' id='bMount" + i + "' src='/img/blueMnt.png' alt='Blue Mountain'>";
+
+                output += "</h4><div class='whiteback'><table><tr><td>Description: </td><td>" + munros[i].description + "</td></tr><tr><td>Region: </td><td>" + munros[i].region + "</td></tr><tr><td>Height: </td><td>" + munros[i].height + "</td></tr><tr><td>Latitude: </td><td>" + munros[i].latitude + "</td></tr><tr><td>Longitude: </td><td>" + munros[i].longitude + "</td></tr><tr><td>Grid Reference: </td><td>" + munros[i].gridReference + "</td></tr><tr><td>Difficulty: </td><td>";
+
+                var height = munros[i].height.substring(0,5);
+                if(height.substring(4,5) == "m") {
+                    height = height.substring(0,4);
+                }
+                height = parseInt(height);
+
+                if (height > 1219) {
+                    output += "<img src='/img/redMnt.png' alt='Red Mountain'><img src='/img/redMnt.png' alt='Red Mountain'><img src='/img/redMnt.png' alt='Red Mountain'>";
+                } else if (height > 1067) {
+                    output += "<img src='/img/yellowMnt.png' alt='Yellow Mountain'><img src='/img/yellowMnt.png' alt='Yellow Mountain'>";
+                } else if (height > 914) {
+                    output += "<img src='/img/greenMnt.png' alt='Green Mountain'>";
+                }
+
+                output += "</td></tr><tr><td>Climbed: </td><td><input type='checkbox' id='checkBox" + i + "' onclick='listenerEx(" + i + ")'></td></tr></table></div>";
+
+                currentFunction = function() {
+                    if($("#checkBox" + i).is(":checked")) {
+                        $("#bMount" + i).show();
+                        console.log("checked");
+                    } else {
+                        console.log("unchecked");
+                        $("#bMount" + i).hide();
+                    }
+                };
+
+//            console.log("creating listener for " + i);
+                $("#checkBox" + i).click(function() {
+                    currentFunction();
+                    console.log(i);
+                });
+
+                if (session && $.inArray(munros[i].name, list)) {
+                    $('#checkbox' + i).checked(true);
+                    currentFunction();
+                }
+
+
+                displayMunros.append(output);
+            }
+            $( "#accordion" ).accordion({collapsible:true, active: false});
+            $(".bMount").hide();
+        }
+    });
+}
+
+
+
+function getUserMunros(callback) {
+    $.ajax({
+        type: "GET",
+        url: "/usermunros",
+        success: function(result) {
+            callback(result);
+        }
+    });
+}
+
+function getSession(callback) {
+    $.ajax({
+        type: "GET",
+        url: "/getsession",
+        success: function(result) {
+            console.log(result);
+            callback(result);
+        }
+    });
+}
+
+$(document).ready(function() {
+
+    var mBagged;
+
+    getSession(function(sessdata) {
+        if (sessdata) {
+            getUserMunros(function(data){
+                mBagged = data;
+
+                getAccordion(mBagged,sessdata);
+
+            })
+        }
+    })
+
+});
+
+
+
+
 
 function myFunction() {
     // Declare variables
@@ -84,4 +197,10 @@ function myFunction() {
         }
     }
     // DO NOT CHANGE
+}
+
+
+
+function addToUserList() {
+
 }

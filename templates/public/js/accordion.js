@@ -118,7 +118,7 @@ function getAccordion(list,session) {
                     console.log(i);
                 });
 
-                if (session && $.inArray(munros[i].name, list)) {
+                if (session && $.inArray(munros[i].name, list) != -1) {
                     console.log(munros[i].name);
                 }
 

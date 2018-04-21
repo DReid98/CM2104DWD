@@ -44,7 +44,7 @@ function escapeHtml(string) {
 }
 
 function returnHtml(string) {
-    return String(string).replace('&#39', function(s) {
+    return String(string).replace("&#39", function(s) {
         return entityMap[s];
     })
 }

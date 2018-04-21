@@ -11,12 +11,12 @@ $(document).ready(function() {
                 $('#nav-login').css("display","none");
 
                 //Show profile and logout buttons
-                $('#nav-profile').css("display","flex !important");
-                $('#nav-logout').css("display","flex !important");
+                $('#nav-profile').css("display","flex");
+                $('#nav-logout').css("display","flex");
             }
             else {
                 //Show Login button
-                $('#nav-login').css("display","flex !important");
+                $('#nav-login').css("display","flex");
 
                 //Hide profile and logout buttons
                 $('#nav-profile').css("display","none");

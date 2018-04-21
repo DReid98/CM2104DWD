@@ -120,8 +120,9 @@ function getAccordion(list,session) {
 
                 if (session && $.inArray(munros[i].name, list)) {
                     // var id = "#checkbox" + i;
-                    $("#checkBox" + i).prop('checked',true);
-                    currentFunction();
+                    // $("#checkBox" + i).prop('checked',true);
+                    // currentFunction();
+                    $("#checkBox" + i).click();
                 }
 
 

@@ -1,17 +1,17 @@
 function listenerEx(i,name) {
     if($("#checkBox" + i).is(":checked")) {
         $("#bMount" + i).show();
-        // bagMunro(name);
+        bagMunro(name);
     } else {
         $("#bMount" + i).hide();
-        // removeMunro(name);
+        removeMunro(name);
     }
 }
 
 
 function bagMunro(mName) {
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: '/bagmunro',
         data: {
             munro: mName
@@ -24,7 +24,7 @@ function bagMunro(mName) {
 
 function removeMunro(mName) {
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: '/removemunro',
         data: {
             munro: mName

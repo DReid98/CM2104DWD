@@ -1,10 +1,11 @@
 function listenerEx(i,name) {
+    var normalName = returnHtml(name);
     if($("#checkBox" + i).is(":checked")) {
         $("#bMount" + i).show();
-        bagMunro(name);
+        bagMunro(normalName);
     } else {
         $("#bMount" + i).hide();
-        removeMunro(name);
+        removeMunro(normalName);
     }
 }
 
@@ -32,18 +33,20 @@ function removeMunro(mName) {
 
 
 var entityMap = {
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': '&quot;',
     "'": '&#39;',
-    "/": '&#x2F;'
+    "&#39": "'"
 };
 
 function escapeHtml(string) {
     return String(string).replace(/[&<>"'\/]/g, function (s) {
         return entityMap[s];
     });
+}
+
+function returnHtml(string) {
+    return String(string).replace('&#39', function(s) {
+        return entityMap[s];
+    })
 }
 
 

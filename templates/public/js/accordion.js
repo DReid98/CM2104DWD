@@ -15,9 +15,6 @@ function bagMunro(mName) {
         url: '/bagmunro',
         data: {
             munro: mName
-        },
-        success: function(response) {
-            console.log(response);
         }
     })
 }
@@ -28,11 +25,25 @@ function removeMunro(mName) {
         url: '/removemunro',
         data: {
             munro: mName
-        },
-        success: function(response) {
-            console.log(response);
         }
     })
+}
+
+
+
+var entityMap = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': '&quot;',
+    "'": '&#39;',
+    "/": '&#x2F;'
+};
+
+function escapeHtml(string) {
+    return String(string).replace(/[&<>"'\/]/g, function (s) {
+        return entityMap[s];
+    });
 }
 
 
@@ -131,7 +142,9 @@ function getAccordion(list,session) {
                     output += "<img src='/img/greenMnt.png' alt='Green Mountain'>";
                 }
 
-                output += "</td></tr><tr><td>Climbed: </td><td><input type='checkbox' id='checkBox" + i + "' onclick='listenerEx(" + i + "," + munros[i].name + ")'></td></tr></table></div>";
+                var safeName = escapeHtml(munros[i].name);
+
+                output += "</td></tr><tr><td>Climbed: </td><td><input type='checkbox' id='checkBox" + i + "' onclick='listenerEx(" + i + "," + safeName + ")'></td></tr></table></div>";
 
                 currentFunction = function() {
                     if($("#checkBox" + i).is(":checked")) {

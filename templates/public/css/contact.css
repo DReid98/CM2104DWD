@@ -3,32 +3,32 @@ footer, div {
 }
 
 
-#SiteTitle {float: right;}
+/*#SiteTitle {float: right;}*/
 
-#SiteLogo {float: left;
-           width: 10%;
-           heith: 10emp}
-
-
-
-          #title {
-          float: left;
-          margin-left: 14px;
-          padding-top: 20px;
-          padding-right: 30px;
-          padding-bottom: 80px;
-          padding-left: 800px;
-          font-family: Rockwell;
-          color: #0B486B;
-          }
+/*#SiteLogo {float: left;*/
+           /*width: 10%;*/
+           /*heith: 10emp}*/
 
 
+/*Page Title*/
+#title {
+    float: left;
+    margin-left: 14px;
+    padding-top: 20px;
+    padding-right: 30px;
+    padding-bottom: 80px;
+    padding-left: 800px;
+    font-family: Rockwell;
+    color: #0B486B;
+}
 
-#PageContent {float:inherit;}
 
-#landscape {float:inherit;
-            height: 50%;
-            widht: 100%;}
+
+/*#PageContent {float:inherit;}*/
+
+/*#landscape {float:inherit;*/
+            /*height: 50%;*/
+            /*widht: 100%;}*/
 
 #form {display: inline-block;
        padding: 620px;
@@ -44,7 +44,7 @@ footer, div {
        padding: 260px;
        padding-top: 20px;
        padding-bottom: 30px;
-       text-align: center:;}
+       text-align: center;}
 
 #text {
        width: 650px;
@@ -58,4 +58,5 @@ footer, div {
        border-radius: 0px;
        resize: none;
        color: #0B486B;
-       font-family: Rockwell;}
+       font-family: Rockwell;
+}

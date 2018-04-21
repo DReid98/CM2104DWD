@@ -34,7 +34,7 @@ function removeMunro(mName) {
 
 var entityMap = {
     "'": '&#39;',
-    "&#39": "'"
+    '&#39;': "'"
 };
 
 function escapeHtml(string) {
@@ -44,7 +44,7 @@ function escapeHtml(string) {
 }
 
 function returnHtml(string) {
-    return String(string).replace("&#39", function(s) {
+    return String(string).replace('&#39;', function(s) {
         return entityMap[s];
     })
 }

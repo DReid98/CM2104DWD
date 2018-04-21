@@ -50,8 +50,10 @@
     text-align: justify;
 }
 
-.tabcontent p img {
-    text-align: center;
+.tabcontent img {
+    display: block;
+    width: 60%;
+    margin: auto;
 }
 
 .clearfix{
@@ -75,7 +77,8 @@
 }
 
 #Pic4 {
-
+    height: 200px;
+    widtt: 300px;
   /*padding-left: 580px;*/
 }
 

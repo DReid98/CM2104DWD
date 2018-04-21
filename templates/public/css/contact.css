@@ -41,8 +41,8 @@ footer, div {
        font-family: Rockwell;}
        /*input {width: 200%;}*/
 
-#form input {
-    width: 100%;
+#form table {
+    width: 90%;
 }
 
 #Button {display: inline-block;

@@ -1,11 +1,12 @@
 function listenerEx(i,name) {
-    var normalName = returnHtml(name);
+    console.log(name);
+    // var normalName = returnHtml(name);
     if($("#checkBox" + i).is(":checked")) {
         $("#bMount" + i).show();
-        bagMunro(normalName);
+        // bagMunro(normalName);
     } else {
         $("#bMount" + i).hide();
-        removeMunro(normalName);
+        // removeMunro(normalName);
     }
 }
 
@@ -33,8 +34,7 @@ function removeMunro(mName) {
 
 
 var entityMap = {
-    "'": '&#39;',
-    '&#39;': "'"
+    "'": '&#39;'
 };
 
 

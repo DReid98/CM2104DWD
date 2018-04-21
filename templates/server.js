@@ -179,6 +179,22 @@ app.get('/munrolist', function(req,res) {
     res.render('pages/list');
 });
 
+
+// add munro to user list
+app.get('/bagmunro', function(req,res) {
+    var munro = req.munro;
+
+    db.collection('users').update({"username":req.session.username},{$addToSet: {"bagged": {$each :[munro]}}});
+
+});
+
+// remove munro from user list
+app.get('/removemunro', function(req,res) {
+    var munro = req.munro;
+
+    db.collection('users').update({"username":req.session.username},{$pull: {"bagged": [munro]}});
+});
+
 // info page
 app.get('/information', function(req,res) {
     res.render('pages/info');

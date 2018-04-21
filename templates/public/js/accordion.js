@@ -1,10 +1,35 @@
-function listenerEx(i) {
+function listenerEx(i,name) {
     if($("#checkBox" + i).is(":checked")) {
         $("#bMount" + i).show();
+        bagMunro(name);
     } else {
         $("#bMount" + i).hide();
+        removeMunro(name);
     }
 }
+
+
+function bagMunro(mName) {
+    $.ajax({
+        type: "GET",
+        url: '/bagmunro',
+        data: {
+            munro: mName
+        }
+    })
+}
+
+function removeMunro(mName) {
+    $.ajax({
+        type: "GET",
+        url: '/removemunro',
+        data: {
+            munro: mName
+        }
+    })
+}
+
+
 /*
 $(document).ready(function() {
     var displayMunros = $('#accordion');
@@ -100,7 +125,7 @@ function getAccordion(list,session) {
                     output += "<img src='/img/greenMnt.png' alt='Green Mountain'>";
                 }
 
-                output += "</td></tr><tr><td>Climbed: </td><td><input type='checkbox' id='checkBox" + i + "' onclick='listenerEx(" + i + ")'></td></tr></table></div>";
+                output += "</td></tr><tr><td>Climbed: </td><td><input type='checkbox' id='checkBox" + i + "' onclick='listenerEx(" + i + "," + munros[i].name + ")'></td></tr></table></div>";
 
                 currentFunction = function() {
                     if($("#checkBox" + i).is(":checked")) {

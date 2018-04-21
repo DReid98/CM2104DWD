@@ -81,6 +81,7 @@ nav {
     z-index: 2;
 }
 
+#nav-login,
 #nav-logout,
 #nav-profile {
     display: none;

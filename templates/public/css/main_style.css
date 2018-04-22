@@ -263,6 +263,7 @@ footer div {
     color: #000000;
     display: flex;
     justify-content: space-between;
+    align-content: center;
 }
 
 .additional-info-images {
@@ -272,7 +273,7 @@ footer div {
 }
 
 .infotext {
-    width: 80%;
+    width: 70%;
     margin: auto;
 }
 

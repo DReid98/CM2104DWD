@@ -35,7 +35,18 @@ function removeMunro(i) {
     })
 }
 
+/*
+function findMunro(i) {
+    var x;
+    $.ajax({
+        type: "GET",
+        url: '/munros',
+        success: function(munros) {
 
+        }
+    })
+}
+*/
 
 var entityMap = {
     "'": '&#39;'

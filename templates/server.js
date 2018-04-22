@@ -192,7 +192,7 @@ app.post('/bagmunro', function(req,res) {
         db.collection('users').update({"username":req.session.username},{$addToSet: {"bagged": [munro]}});
     });
 
-    console.log(munro);
+    // console.log(munro);
     res.send("Done");
 
 });
@@ -202,7 +202,7 @@ app.post('/removemunro', function(req,res) {
     var mId = req.body.id;
 
     // db.collection('users').update({"username":req.session.username},{$pull: {"bagged": [munro]}});
-    console.log(munro);
+    // console.log(munro);
     res.send("Done");
 });
 

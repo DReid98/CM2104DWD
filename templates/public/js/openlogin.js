@@ -1,4 +1,8 @@
 
-$('#login-close').on('click',function() {
-    this.css("display","none");
-});
+function openLogin() {
+    $('#login').css("display","block");
+}
+
+function closeLogin() {
+    $('#login').css("display","none");
+}

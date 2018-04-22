@@ -34,7 +34,7 @@ p{
     padding: 0;
 }
 
-.Content ul:nth-child(odd) {
+.Content ul li:nth-child(odd) {
     background-color: #cae8e8;
 }
 

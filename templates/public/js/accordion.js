@@ -1,20 +1,20 @@
 function listenerEx(i) {
     if($("#checkBox" + i).is(":checked")) {
         $("#bMount" + i).show();
-        // bagMunro(i);
+        bagMunro(i);
     } else {
         $("#bMount" + i).hide();
-        // removeMunro(i);
+        removeMunro(i);
     }
 }
 
 
-function bagMunro(mName) {
+function bagMunro(i) {
     $.ajax({
         type: "POST",
         url: '/bagmunro',
         data: {
-            id: i
+            "id": i
         },
         success: function(response) {
             console.log(response);
@@ -22,12 +22,12 @@ function bagMunro(mName) {
     })
 }
 
-function removeMunro(mName) {
+function removeMunro(i) {
     $.ajax({
         type: "POST",
         url: '/removemunro',
         data: {
-            id: i
+            "id": i
         },
         success: function(response) {
             console.log(response);

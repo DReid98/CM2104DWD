@@ -18,10 +18,10 @@
             <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
-            <span id = "register-link" >or <a href="#" onclick="closeBox('#login');openBox('#register')">Register</a></span>
+            <span id = "register-link" >or <a href="#" onclick="openBox('#register');closeBox('#login')">Register</a></span>
             <div id = "popUp-bottom">
                 <button type="button" onclick="closeBox('#login')" class="cancelbtn log-btn">Cancel</button>
-                <span class="psw"><a href="#" onclick="closeBox('#login');openBox('#forgottenPassword')">Forgotten password</a></span>
+                <span class="psw"><a href="#" onclick="openBox('#forgottenPassword');closeBox('#login')">Forgotten password</a></span>
             </div>
         </div>
     </form>
@@ -41,7 +41,7 @@
             <input type="text" placeholder="Enter E-mail" name="email" id = "registerEmail"required>
             <input type="text" placeholder="Enter your name" name="name" required>
             <input type="password" placeholder="Enter Password" name="password" id = "registerPassword" required>
-            <button type="submit">Submit</button>
+            <button class="log-btn" type="submit">Submit</button>
 
             <div id = "popUp-bottom">
                 <button class="cancelbtn reset-cancel-button log-btn" type="button" onclick="closeBox('#register');openBox('#login')" >Cancel</button>
@@ -63,7 +63,7 @@
             <h3 class="boxtitle">Forgotten Password</h3>
 
             <input type="text" placeholder="Enter your E-mail" name="email" required>
-            <button id = "reset-button" type="submit">Reset password</button>
+            <button class="log-btn" id = "reset-button" type="submit">Reset password</button>
 
             <div id = "popUp-bottom">
                 <button class="cancelbtn reset-cancel-button log-btn" type="button" onclick="closeBox('#forgottenPassword');openBox('#login')" >Cancel</button>

@@ -251,13 +251,14 @@ footer div {
 /* INDEX CONTENT CSS */
 #content-container {
     width: 90%;
+    margin: auto;
 }
 
 .infolink {
     width: 100%;
-    height: 200px;
     border: 1px solid #0078A8;
     margin: 20px 0;
+    padding: 1px;
 }
 
 .infolink a {

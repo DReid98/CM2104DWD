@@ -277,7 +277,7 @@ footer div {
 .additional-info-images {
     display: block;
     margin: auto;
-    height: 200px;
+    width: 100%;
 }
 
 .infotext {

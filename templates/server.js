@@ -188,7 +188,7 @@ app.post('/bagmunro', function(req,res) {
 
     db.collection('munros').find().toArray(function(err,result) {
         if(err) throw err;
-        var munro = result[mId];
+        var munro = result[mId].name;
         db.collection('users').update({"username":req.session.username},{$addToSet: {"bagged": [munro]}});
     });
 
@@ -203,6 +203,13 @@ app.post('/removemunro', function(req,res) {
 
     // db.collection('users').update({"username":req.session.username},{$pull: {"bagged": [munro]}});
     // console.log(munro);
+
+    db.collection('munros').find().toArray(function(err,result) {
+        if(err) throw err;
+        var munro = result[mId];
+        db.collection('users').update({"username":req.session.username},{$pull: {"bagged": [munro]}});
+    });
+
     res.send("Done");
 });
 

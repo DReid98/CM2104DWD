@@ -93,9 +93,10 @@ app.get('/munromap', function(req,res) {
      //   res.send(result);
    // });
 
+    /*
     var userSession = req.session;
     userSession.username = "genericuser033";
-
+    */
     var mTest;
 /*
     db.collection('munros').find({"name": "Ben Nevis"}).toArray(function(err,result){
@@ -108,7 +109,7 @@ app.get('/munromap', function(req,res) {
     // db.collection('users').update({"username":userSession.username},{$addToSet: {"bagged": {$each :["Ben Nevis","Ben Hope","Ben Lomond"]}}});
 
 
-    userSession.loggedin = true;
+    // userSession.loggedin = true;
 
 
     // res.render('pages/map', {
@@ -233,6 +234,43 @@ app.get('/logout', function(req,res) {
     res.redirect('/');
 });
 
+
+
+// ----- LOGIN -----
+
+app.get('/dologin', function(req,res){
+    console.log(JSON.stringify(req.body));
+
+    var email = req.body.username;
+    var pword = req.body.password;
+
+    db.collection('users').findOne({"email":email}, function(err,result) {
+
+        // throw err if err
+        if (err) throw err;
+
+        if (!result) {
+            // openBox('#login');
+            res.redirect('/');
+            return;
+        }
+
+        if (result.password == pword) {
+            req.session.loggedin = true;
+            var sess = req.session;
+            sess.username = result.username;
+            res.redirect('/profile');
+        }
+        else {
+            res.redirect('/');
+        }
+
+
+    });
+
+});
+
+
 /*
 // login page
 app.get('/login', function(req,res) {
@@ -241,3 +279,22 @@ app.get('/login', function(req,res) {
 */
 
 // app.listen(8080);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

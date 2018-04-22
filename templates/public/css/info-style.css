@@ -12,7 +12,7 @@
 }
 
 /* Style the buttons inside the tab */
-.tab button {
+.info-tablinks {
     display: block;
     background-color: #3B8686;
     color: black;
@@ -28,13 +28,13 @@
 }
 
 /* Change background color of buttons on hover */
-.tab button:hover {
+.info-tablinks:hover {
     background-color: #A8DBA8;
 
 }
 
 /* Create an active/current "tab button" class */
-.tab button.active {
+.info-tablinks.active {
     background-color: #A8DBA8;
 
 }

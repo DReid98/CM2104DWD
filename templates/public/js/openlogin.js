@@ -20,7 +20,7 @@ function openBox(boxId) {
     $('#' + boxId).css("display","block");
 }
 
-
+/*
 // Set modal for window click close function
 var login = document.getElementById('login');
 var reg = document.getElementById('register');
@@ -30,3 +30,4 @@ var pass = document.getElementById('forgottenPassword');
 window.onclick = function(event) {
     closeBox(event.target.id);
 };
+    */

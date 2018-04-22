@@ -256,9 +256,8 @@ footer div {
 .infolink {
     width: 90%;
     height: 200px;
-    overflow: auto;
     border: 1px solid #0078A8;
-    margin: 20px 5%;
+    margin: auto;
 }
 
 .infolink a {
@@ -267,6 +266,7 @@ footer div {
     display: flex;
     justify-content: space-between;
     align-content: center;
+    padding: 0;
 }
 
 .additional-info-images {

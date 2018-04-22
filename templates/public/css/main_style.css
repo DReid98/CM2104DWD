@@ -240,10 +240,44 @@ footer div {
     
 }
 
-/* Unknown CSS - Testing */
+/* Unknown CSS - Testing
 .additional-info-images{
     height:100%;
     width:30%;
     float: left;
+}
+*/
 
+/* INDEX CONTENT CSS */
+#content-container {
+    width: 100%;
+}
+
+.infolink {
+    width: 90%;
+    margin: auto;
+}
+
+.infolink a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.additional-info-images {
+    width: 20%;
+    display: block;
+    margin: auto;
+}
+
+.infotext {
+    width: 80%;
+    margin: auto;
+}
+
+.infotext h3 {
+    text-align: center;
+}
+
+.infotext p {
+    text-align: left;
 }

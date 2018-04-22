@@ -257,6 +257,7 @@ footer div {
     width: 90%;
     margin: auto;
     height: auto;
+    border: 1px solid #0078A8;
 }
 
 .infolink a {

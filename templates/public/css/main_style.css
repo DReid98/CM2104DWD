@@ -256,6 +256,7 @@ footer div {
 .infolink {
     width: 90%;
     margin: auto;
+    height: auto;
 }
 
 .infolink a {

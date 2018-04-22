@@ -23,12 +23,16 @@ p{
     width: 90%;
     margin: auto;
     height: auto;
+    display: flex;
+    align-content: center;
 }
 
 .Content ul {
     list-style-type: none;
     text-align: left;
-    width: 300px;
+    width: 400px;
+    margin: 0;
+    padding: 0;
 }
 
 .Content ul:nth-child(odd) {

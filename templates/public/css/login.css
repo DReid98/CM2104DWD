@@ -10,7 +10,9 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
+/* CHANGE TO UNIQUE LOGIN CLASS */
 /* Set a style for all buttons */
+/*
 button {
     background-color: #0B486B;
     color: white;
@@ -24,6 +26,7 @@ button {
 button:hover {
     opacity: 0.8;
 }
+*/
 
 #register-link{
     padding-left: 43%;

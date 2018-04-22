@@ -1,0 +1,26 @@
+<div id="login" class="modal">
+    <form class="modal-content animate" action="/userDetails" method="POST">
+        <div class="imgcontainer">
+            <span id="login-close" class="close" title="Close Modal">&times;</span>
+            <!--onclick="document.getElementById('login').style.display='none'"-->
+        </div>
+
+        <div class="container">
+
+            <h3 class="boxtitle">Login</h3>
+
+            <input type="text" placeholder="Enter your email" name="email" required>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <button class="log-btn" type="submit">Login</button>
+
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            <span id = "register-link" >or<a href="#" onclick="document.getElementById('register').style.display='block'">Register</a></span>
+            <div id = "popUp-bottom">
+                <button type="button" onclick="document.getElementById('login').style.display='none'" class="cancelbtn log-btn">Cancel</button>
+                <span class="psw">Forgot <a href="#" onclick="document.getElementById('forgottenPassword').style.display='block'">password?</a></span>
+            </div>
+        </div>
+    </form>
+</div>

@@ -12,8 +12,8 @@ input[type=text], input[type=password] {
 
 /* CHANGE TO UNIQUE LOGIN CLASS */
 /* Set a style for all buttons */
-/*
-button {
+
+.log-btn {
     background-color: #0B486B;
     color: white;
     padding: 14px 20px;
@@ -23,10 +23,16 @@ button {
     width: 100%;
 }
 
-button:hover {
+.log-btn:hover {
     opacity: 0.8;
 }
-*/
+
+
+.boxtitle {
+    width: 100%;
+    text-align: center;
+}
+
 
 #register-link{
     padding-left: 43%;

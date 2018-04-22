@@ -12,12 +12,12 @@ function closeLogin() {
 
 // Close Login/Register/Password Box
 function closeBox(boxId) {
-    $('#' + boxId).css("display","none");
+    $(boxId).css("display","none");
 }
 
 // Open Login/Register/Password Box
 function openBox(boxId) {
-    $('#' + boxId).css("display","block");
+    $(boxId).css("display","block");
 }
 
 /*

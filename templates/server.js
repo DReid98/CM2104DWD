@@ -228,7 +228,8 @@ app.get('/profile', function(req,res) {
 });
 
 app.get('/logout', function(req,res) {
-    req.session._destroy();
+    req.session.loggedin = false;
+    req.session.destroy();
     res.redirect('/');
 });
 

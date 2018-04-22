@@ -23,15 +23,14 @@ p{
     width: 90%;
     margin: auto;
     height: auto;
-    display: flex;
-    align-content: center;
 }
 
 .Content ul {
     list-style-type: none;
     text-align: left;
+    display: block;
     width: 400px;
-    margin: 0;
+    margin: auto;
     padding: 0;
 }
 

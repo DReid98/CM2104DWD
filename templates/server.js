@@ -225,7 +225,18 @@ app.get('/contact', function(req,res) {
 });
 
 app.get('/profile', function(req,res) {
-    res.render('pages/profile');
+
+    var uname = req.session.username;
+
+    db.collection('users').findOne({"username":uname}, function(err,result) {
+        if (err) throw err;
+
+        res.render('pages/profile', {
+            "user": result
+        });
+
+    });
+
 });
 
 app.get('/logout', function(req,res) {
@@ -264,12 +275,7 @@ app.post('/dologin', function(req,res){
             req.session.loggedin = true;
             var sess = req.session;
             sess.username = result.username;
-            res.redirect('/profile',
-                {
-                    "user": result
-                }
-
-            );
+            res.redirect('/profile');
         }
         else {
             console.log("WRONG PASSWORD ?")

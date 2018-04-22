@@ -105,7 +105,7 @@ app.get('/munromap', function(req,res) {
 
     // console.log(mTest);
 
-    db.collection('users').update({"username":userSession.username},{$addToSet: {"bagged": {$each :["Ben Nevis","Ben Hope","Ben Lomond"]}}});
+    // db.collection('users').update({"username":userSession.username},{$addToSet: {"bagged": {$each :["Ben Nevis","Ben Hope","Ben Lomond"]}}});
 
 
     userSession.loggedin = true;

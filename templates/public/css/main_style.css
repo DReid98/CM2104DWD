@@ -240,3 +240,10 @@ footer div {
     
 }
 
+/* Unknown CSS - Testing */
+.additional-info-images{
+    height:100%;
+    width:30%;
+    float: left;
+
+}

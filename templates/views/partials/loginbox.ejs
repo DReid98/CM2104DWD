@@ -18,10 +18,10 @@
             <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
-            <span id = "register-link" >or <a href="#" onclick="openBox('#register');closeBox('#login')">Register</a></span>
+            <span id = "register-link" >or <a href="#" onclick="openBox('#register')">Register</a></span>
             <div id = "popUp-bottom">
                 <button type="button" onclick="closeBox('#login')" class="cancelbtn log-btn">Cancel</button>
-                <span class="psw"><a href="#" onclick="openBox('#forgottenPassword');closeBox('#login')">Forgotten password</a></span>
+                <span class="psw"><a href="#" onclick="openBox('#forgottenPassword')">Forgotten password</a></span>
             </div>
         </div>
     </form>
@@ -44,7 +44,7 @@
             <button class="log-btn" type="submit">Submit</button>
 
             <div id = "popUp-bottom">
-                <button class="cancelbtn reset-cancel-button log-btn" type="button" onclick="closeBox('#register');openBox('#login')" >Cancel</button>
+                <button class="cancelbtn reset-cancel-button log-btn" type="button" onclick="closeBox('#register')" >Cancel</button>
             </div>
         </div>
     </form>
@@ -66,7 +66,7 @@
             <button class="log-btn" id = "reset-button" type="submit">Reset password</button>
 
             <div id = "popUp-bottom">
-                <button class="cancelbtn reset-cancel-button log-btn" type="button" onclick="closeBox('#forgottenPassword');openBox('#login')" >Cancel</button>
+                <button class="cancelbtn reset-cancel-button log-btn" type="button" onclick="closeBox('#forgottenPassword')" >Cancel</button>
             </div>
         </div>
     </form>

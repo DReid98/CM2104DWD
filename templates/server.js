@@ -251,17 +251,20 @@ app.post('/dologin', function(req,res){
 
         if (!result) {
             // openBox('#login');
+            console.log("NOT FOUND");
             res.redirect('/');
             return;
         }
 
         if (result.password == pword) {
+            console.log("FOUND");
             req.session.loggedin = true;
             var sess = req.session;
             sess.username = result.username;
             res.redirect('/profile');
         }
         else {
+            console.log("WRONG PASSWORD ?")
             res.redirect('/');
         }
 

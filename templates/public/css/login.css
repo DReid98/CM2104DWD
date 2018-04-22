@@ -42,7 +42,7 @@ input[type=text], input[type=password] {
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
-    background-color: #a21f08	;
+    background-color: #79BD9A	;
 }
 
 .container {
@@ -105,7 +105,7 @@ span.psw {
 }
 .close:hover,
 .close:focus {
-    color: red;
+    color: white;
     cursor: pointer;
 }
 

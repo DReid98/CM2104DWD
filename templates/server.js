@@ -238,7 +238,7 @@ app.get('/logout', function(req,res) {
 
 // ----- LOGIN -----
 
-app.get('/dologin', function(req,res){
+app.post('/dologin', function(req,res){
     console.log(JSON.stringify(req.body));
 
     var email = req.body.username;

@@ -19,6 +19,22 @@ p{
   text-align: justify;
 }
 
+.Content {
+    width: 90%;
+    margin: auto;
+    height: auto;
+}
+
+.Content ul {
+    list-style-type: none;
+    text-align: left;
+    width: 300px;
+}
+
+.Content ul:nth-child(odd) {
+    background-color: #cae8e8;
+}
+
 /*
 .Content {
   width: 90%; /* wider content - no sidebar

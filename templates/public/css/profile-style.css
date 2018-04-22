@@ -2,7 +2,7 @@
 body {font-family: Rockwell, sans-serif;}
 
 
-
+/*
 h1 {
     font-family: Rockwell;
     font-size: 30px;
@@ -13,18 +13,20 @@ h2 {
   padding-top: 20px;
   padding-left: 190px;
 }
+*/
 
 p{
   text-align: justify;
 }
 
-
+/*
 .Content {
-  width: 90%; /* wider content - no sidebar */
+  width: 90%; /* wider content - no sidebar
   margin: 0;
   padding-left: 30px;
   float: left;
 }
+*/
 
 /*
 .Content2 {
@@ -51,9 +53,10 @@ p{
   padding-left: 240px;
 }
 */
-
+/*
 #Pic{
   padding-left: 100px;
   width: 18%;
   height: auto;
 }
+*/

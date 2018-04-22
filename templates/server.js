@@ -223,9 +223,19 @@ app.get('/contact', function(req,res) {
     res.render('pages/contact');
 });
 
+app.get('/profile', function(req,res) {
+    res.render('pages/profile');
+});
+
+app.get('/logout', function(req,res) {
+    res.redirect('/');
+});
+
+/*
 // login page
 app.get('/login', function(req,res) {
     res.render('pages/login');
 });
+*/
 
 // app.listen(8080);

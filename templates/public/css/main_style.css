@@ -269,9 +269,14 @@ footer div {
     padding: 0;
 }
 
-.additional-info-images {
+.infoimg {
     width: 20%;
+    margin: auto;
+}
+
+.additional-info-images {
     display: block;
+    width: 100%;
     margin: auto;
 }
 

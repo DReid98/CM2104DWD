@@ -250,14 +250,14 @@ footer div {
 
 /* INDEX CONTENT CSS */
 #content-container {
-    width: 100%;
+    width: 90%;
 }
 
 .infolink {
-    width: 90%;
+    width: 100%;
     height: 200px;
     border: 1px solid #0078A8;
-    margin: auto;
+    margin: 20px 0;
 }
 
 .infolink a {
@@ -266,7 +266,7 @@ footer div {
     display: flex;
     justify-content: space-between;
     align-content: center;
-    padding: 0;
+    /*padding: 20px 0;*/
 }
 
 .infoimg {
@@ -276,8 +276,8 @@ footer div {
 
 .additional-info-images {
     display: block;
-    width: 100%;
     margin: auto;
+    height: 200px;
 }
 
 .infotext {

@@ -264,7 +264,12 @@ app.post('/dologin', function(req,res){
             req.session.loggedin = true;
             var sess = req.session;
             sess.username = result.username;
-            res.redirect('/profile');
+            res.redirect('/profile',
+                {
+                    "user": result
+                }
+
+            );
         }
         else {
             console.log("WRONG PASSWORD ?")

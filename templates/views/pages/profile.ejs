@@ -22,14 +22,14 @@
 <main>
     <section class="page">
         <img src="/img/profilepic.png" id="Pic"/>
-        <h1 id="SiteTitle">Welcome Jane Doe</h1>
+        <h1 id="SiteTitle">Hello <%= user.name %></h1>
 
         <h4 id="PageList"> Munros Bagged </h4>
         <div class="Content">
             <ul>
-                <li>Munro</li>
-                <li>Munro</li>
-                <li>Munro</li>
+                <% user.bagged.forEach( function(munro) { %>
+                    <li><%= munro %></li>
+                <% }); %>
             </ul>
         </div>
     </section>

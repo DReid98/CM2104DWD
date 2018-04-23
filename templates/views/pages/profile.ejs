@@ -28,9 +28,12 @@
 
         <h4 id="PageList"> Munros Bagged </h4>
 
-        <p><%= user.bagged.length %> / 282</p>
+        <!--<p><%= user.bagged.length %> / 282</p>-->
 
         <div class="Content">
+
+            <p><%= user.bagged.length %> / 282</p>
+
             <ul>
                 <% user.bagged.forEach( function(munro) { %>
                     <li><%= munro %></li>

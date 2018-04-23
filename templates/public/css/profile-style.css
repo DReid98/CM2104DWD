@@ -38,6 +38,10 @@ p{
     background-color: #cae8e8;
 }
 
+#progress-text {
+    width: 100%;
+    text-align: center;
+}
 
 /* -- PROGRESS CHART -- */
 

@@ -7,7 +7,7 @@ google.charts.load("current", {packages:["corechart"]});
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
-    var data = google.visualization([
+    var data = google.visualization.arrayToDataTable([
         ['Category','Number of Munros'],
         ['Bagged',82],
         ['Uncomplete',200]

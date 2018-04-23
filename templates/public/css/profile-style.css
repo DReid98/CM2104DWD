@@ -38,6 +38,15 @@ p{
     background-color: #cae8e8;
 }
 
+
+/* -- PROGRESS CHART -- */
+
+#progress-donut {
+    width: 300px;
+    height: 300px;
+}
+
+
 /*
 .Content {
   width: 90%; /* wider content - no sidebar

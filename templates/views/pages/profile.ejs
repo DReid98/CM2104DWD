@@ -24,7 +24,12 @@
         <img src="/img/profilepic.png" id="Pic"/>
         <h1 id="SiteTitle">Hello <%= user.name %></h1>
 
+        <div id="progress-donut"></div>
+
         <h4 id="PageList"> Munros Bagged </h4>
+
+        <p><%= user.bagged.length %> / 282</p>
+
         <div class="Content">
             <ul>
                 <% user.bagged.forEach( function(munro) { %>
@@ -40,6 +45,12 @@
 </footer>
 
 <% include ../partials/scripts.ejs %>
+
+<% var numMunros = user.bagged.length %>
+
+<!-- JAVASCRIPT FOR PROGRESS CHART (GOOGLE CHARTS) -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="/js/profilechart.js"></script>
 
 </body>
 

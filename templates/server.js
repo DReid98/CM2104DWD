@@ -289,7 +289,7 @@ app.post('/dologin', function(req,res){
 
 
 //Contact page - submit route
-app.get('/submit', function (req,res) {
+app.post('/submit', function (req,res) {
     res.render('pages/submit');
 });
 

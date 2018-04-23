@@ -224,7 +224,12 @@ function getMunros(list,session) {
                 marker.mLat = munros[i].latitude;
                 marker.mLng = munros[i].longitude;
                 marker.mLocation = munros[i].region;
-                // marker.mImage = munros[i].image;
+
+                if (munros[i].image) {
+                    marker.mImage = munros[i].image;
+                }
+
+
                 // marker.mDiff = munros[i].difficulty;
 
 
@@ -684,8 +689,12 @@ function openBox(e) {
     munro.innerHTML = m.mName;
 
 // No image urls in JSON file, placeholder image used
-    // var img = document.getElementById("mImg");
-    // img.src = m.mImage;
+
+    var img = document.getElementById("mImg");
+    img.src = m.mImage;
+
+
+
 
     var info = document.getElementById("mText");
 

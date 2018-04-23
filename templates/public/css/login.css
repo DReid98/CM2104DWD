@@ -31,6 +31,8 @@ input[type=text], input[type=password] {
 .boxtitle {
     width: 100%;
     text-align: center;
+    font-family: Rockwell;
+    color: #0B486B;
 }
 
 

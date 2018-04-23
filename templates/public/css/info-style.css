@@ -1,6 +1,9 @@
 /* Style the tab */
 
-
+#SiteTitle {
+    font-family: Rockwell;
+    color: #0B486B;
+}
 
 .tab {
     float: left;

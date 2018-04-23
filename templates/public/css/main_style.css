@@ -164,6 +164,11 @@ nav {
     margin-top: 60px;
 }
 
+.page h1 {
+    font-family: Rockwell;
+    color: #0B486B;
+}
+
 footer {
     height: 50px;
     color: #FFFFFF;

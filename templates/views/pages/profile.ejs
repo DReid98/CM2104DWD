@@ -32,7 +32,7 @@
 
         <div class="Content">
 
-            <p id="progress-text"><%= user.bagged.length %> / 282</p>
+            <p id="progress-text" data-test-value="<%= user.bagged.length %>"><%= user.bagged.length %> / 282</p>
 
             <ul>
                 <% user.bagged.forEach( function(munro) { %>

@@ -1,5 +1,5 @@
 
-var numBagged = "<%= numMunros %>";
+var numBagged = document.getElementById('progress-text').dataset.testValue;
 numBagged = parseInt(numBagged);
 var remaining = 282 - numBagged;
 

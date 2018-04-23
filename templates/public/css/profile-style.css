@@ -38,6 +38,10 @@ p{
     background-color: #cae8e8;
 }
 
+.Content ul li {
+    padding-left: 5px;
+}
+
 #progress-text {
     width: 100%;
     text-align: center;

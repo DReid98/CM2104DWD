@@ -10,7 +10,7 @@ function drawChart() {
     var data = google.visualization.arrayToDataTable([
         ['Category','Number of Munros'],
         ['Bagged',numBagged],
-        ['Uncomplete',remaining]
+        ['Remaining',remaining]
     ]);
 
     var options = {

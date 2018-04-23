@@ -228,14 +228,19 @@ app.get('/profile', function(req,res) {
 
     var uname = req.session.username;
 
-    db.collection('users').findOne({"username":uname}, function(err,result) {
-        if (err) throw err;
+    if (req.session.loggedin) {
+        db.collection('users').findOne({"username":uname}, function(err,result) {
+            if (err) throw err;
 
-        res.render('pages/profile', {
-            "user": result
+            res.render('pages/profile', {
+                "user": result
+            });
+
         });
-
-    });
+    }
+    else {
+        res.render('pages/index');
+    }
 
 });
 

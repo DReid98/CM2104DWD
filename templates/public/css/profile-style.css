@@ -61,14 +61,14 @@ p{
 #label-overlay {
     width: 300px;
     height: 300px;
-    top: 233px;
-    left: 205px;
+    top: 150px;
+    left: 150px;
     cursor: default;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: absolute;
 }
 
 #label-overlay p {

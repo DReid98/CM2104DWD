@@ -101,7 +101,7 @@ img {
 */
 
 #myInput {
-    background-image: url('/../../logo.png');
+    background-image: url('/img/logo.png');
     background-position: -8px 0px;
     background-size: 55px 40px;
     background-repeat: no-repeat;

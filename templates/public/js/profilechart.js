@@ -16,8 +16,8 @@ function drawChart() {
     var options = {
         pieHole: 0.4,
         slices: {
-            0: {color: '#3B8686'},
-            1: {color: 'transparent'}
+            0: {color: '#3B8686',offset: 0.2},
+            1: {color: '#79BD9A'}
         },
         pieSliceText: 'none',
         legend: 'none'

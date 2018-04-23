@@ -65,8 +65,8 @@ p{
 
 #label-overlay {
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 50px;
+    height: 50px;
     top: 0;
     left: 0;
     right: 0;
@@ -74,8 +74,8 @@ p{
     cursor: default;
     margin: auto;
     display: flex;
-    align-items: center;
-    /*justify-content: center;*/
+    /*align-items: center;*/
+    justify-content: center;
 }
 
 #label-overlay p {

@@ -1,7 +1,7 @@
 
-var numBagged = <%= numMunros %>;
-numBagged = parseInt(numBagged);
-var remaining = 282 - numBagged;
+// var numBagged = <%= numMunros %>;
+// numBagged = parseInt(numBagged);
+// var remaining = 282 - numBagged;
 
 google.charts.load("current", {packages:["corechart"]});
 google.charts.setOnLoadCallback(drawChart);
@@ -9,8 +9,8 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
     var data = google.visualization([
         ['Category','Number of Munros'],
-        ['Bagged',numBagged],
-        ['Uncomplete',remaining]
+        ['Bagged',82],
+        ['Uncomplete',200]
     ]);
 
     var options = {

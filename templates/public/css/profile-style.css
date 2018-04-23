@@ -56,7 +56,35 @@ p{
     margin: auto;
 }
 
+/* -- CHART OVERLAY -- */
 
+#label-overlay {
+    width: 90px;
+    height: 45px;
+    position: absolute;
+    top: 233px;
+    left: 205px;
+    text-align: center;
+    cursor: default;
+}
+
+#label-overlay p {
+    line-height: 0.3;
+    padding: 0;
+    margin: 8px;
+}
+
+#bagged {
+    line-height: 0.5;
+    font-size: 20pt;
+    color: #8e8e8e;
+}
+
+#remaining {
+    line-height: 0.5;
+    font-size: 12pt;
+    color: #cdcdcd;
+}
 
 /*
 .Content {

@@ -278,13 +278,19 @@ app.post('/dologin', function(req,res){
             res.redirect('/profile');
         }
         else {
-            console.log("WRONG PASSWORD ?")
+            console.log("WRONG PASSWORD ?");
             res.redirect('/');
         }
 
 
     });
 
+});
+
+
+//Contact page - submit route
+app.get('/submit', function (req,res) {
+    res.render('pages/submit');
 });
 
 

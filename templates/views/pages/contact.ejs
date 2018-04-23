@@ -22,7 +22,7 @@
     <main>
         <section class="page">
             <h2 id="title">CONTACT PAGE</h2>
-            <form id="form">
+            <form id="form" method="POST" action="/submit">
                 <table border="0" cellspacing= "5" cellpadding="5">
 
 
@@ -49,16 +49,15 @@
                     </tr>
                 </table>
                 <div id="Button">
-                    <input type="button" value="Submit" onclick="openWin()">
-                    <script>
-                        function openWin() {
-                            window.open("file:///H:/github/CM2104/contanct%20page/new.html");
-                        }
-                    </script>
+                    <input type="button" value="Submit">
                 </div>
 
             </form>
         </section>
+
+        <!-- Login Box -->
+        <% include ../partials/loginbox.ejs %>
+
     </main>
 
     <footer>

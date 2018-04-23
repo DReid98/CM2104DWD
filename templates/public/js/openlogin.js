@@ -1,7 +1,7 @@
 
 //Open Login pop-up
 function openLogin() {
-    $('#login').css("display","block");
+    $('#login').css("display","flex");
 }
 /*
 //Close Login pop-up
@@ -17,7 +17,7 @@ function closeBox(boxId) {
 
 // Open Login/Register/Password Box
 function openBox(boxId) {
-    $(boxId).css("display","block");
+    $(boxId).css("display","flex");
 }
 
 /*

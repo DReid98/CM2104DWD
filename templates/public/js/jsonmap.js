@@ -691,9 +691,10 @@ function openBox(e) {
 // No image urls in JSON file, placeholder image used
 
     var img = document.getElementById("mImg");
-    img.src = m.mImage;
 
-
+    if (m.mImage) {
+        img.src = m.mImage;
+    }
 
 
     var info = document.getElementById("mText");

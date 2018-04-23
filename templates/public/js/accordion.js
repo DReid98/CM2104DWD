@@ -161,9 +161,14 @@ function getAccordion(list,session) {
                     output += "<img src='/img/greenMnt.png' alt='Green Mountain'>";
                 }
 
-                var safeName = escapeHtml(munros[i].name);
 
-                output += "</td></tr><tr><td>Climbed: </td><td><input type='checkbox' id='checkBox" + i + "' onclick='listenerEx(" + i + ")'></td></tr></table></div>";
+                if (session) {
+                    output += "</td></tr><tr><td>Climbed: </td><td><input type='checkbox' id='checkBox" + i + "' onclick='listenerEx(" + i + ")'></td></tr></table></div>";
+                }
+                else {
+                    output += "</td></tr></table></div>"
+                }
+
 
                 currentFunction = function() {
                     if($("#checkBox" + i).is(":checked")) {

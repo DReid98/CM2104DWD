@@ -1,5 +1,5 @@
 
-var numBagged = <%= numMunros %>;
+var numBagged = "<%= numMunros %>";
 numBagged = parseInt(numBagged);
 var remaining = 282 - numBagged;
 

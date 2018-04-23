@@ -695,6 +695,9 @@ function openBox(e) {
     if (m.mImage) {
         img.src = m.mImage;
     }
+    else {
+        img.src = "/img/bennevis.jpg";
+    }
 
 
     var info = document.getElementById("mText");

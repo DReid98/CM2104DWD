@@ -13,6 +13,10 @@
 
             <input type="text" placeholder="Enter your email" name="email" required>
             <input type="password" placeholder="Enter Password" name="password" required>
+
+            <!-- Display any login messages -->
+            <p id="login-message"></p>
+
             <button class="log-btn" type="submit">Login</button>
 
             <label>
@@ -30,7 +34,7 @@
 
 <!-- NEW USER (REGISTER) - MODAL -->
 <div id="register" class="modal">
-    <form class="modal-content animate" action="/registerDetails" method = "POST" >
+    <form class="modal-content animate" action="/register" method = "POST" >
         <div class="imgcontainer">
             <span onclick="closeBox('#register')" class="close" title="Close Modal">&times;</span>
         </div>
@@ -38,9 +42,19 @@
 
             <h3 class="boxtitle">Register</h3>
 
-            <input type="text" placeholder="Enter E-mail" name="email" id = "registerEmail"required>
+            <!-- enter name -->
             <input type="text" placeholder="Enter your name" name="name" required>
+
+            <!-- enter email -->
+            <input type="text" placeholder="Enter E-mail" name="email" id = "registerEmail"required>
+
+            <!-- enter username -->
+            <input type="text" placeholder="Enter a username" name="username" required>
+
+            <!-- enter password-->
             <input type="password" placeholder="Enter Password" name="password" id = "registerPassword" required>
+
+            <!-- submit new user -->
             <button class="log-btn" type="submit">Submit</button>
 
             <div id = "popUp-bottom">
@@ -53,7 +67,7 @@
 
 <!-- FORGOTTEN PASSWORD - MODAL -->
 <div id="forgottenPassword" class="modal">
-    <form class="modal-content animate" action="/forgottenPasswordDetails" method="GET" >
+    <form class="modal-content animate" action="/forgotpassword" method="GET" >
         <div class="imgcontainer">
             <span onclick="closeBox('#forgottenPassword')" class="close" title="Close Modal">&times;</span>
         </div>

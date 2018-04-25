@@ -272,6 +272,7 @@ app.post('/dologin', function(req,res){
             // openBox('#login');
             console.log("NOT FOUND");
             res.redirect('/');
+            $('#login-message').innerText = "E-Mail Not Found";
             return;
         }
 
@@ -289,6 +290,42 @@ app.post('/dologin', function(req,res){
 
 
     });
+
+});
+
+
+// ----- REGISTER NEW USER -----
+
+app.post('/register', function(req,res) {
+    console.log(JSON.stringify(req.body));
+
+    var name = req.body.name;
+    var email = req.body.email;
+    var username = req.body.username;
+    var pword = req.body.password;
+
+    var newUserData = {
+        "name": name,
+        "email": email,
+        "username": username,
+        "password": pword,
+        "bagged": []
+    };
+
+    // Check username
+        // Username taken
+    // Check email
+        // Already registered
+
+
+
+
+});
+
+
+// ----- FORGOTTEN PASSWORD -----
+
+app.post('/forgotpassword', function(req,res) {
 
 });
 

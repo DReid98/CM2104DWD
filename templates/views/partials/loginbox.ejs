@@ -1,7 +1,7 @@
 
 <!--LOGIN BOX - MODAL -->
 <div id="login" class="modal">
-    <form class="modal-content animate" action="/dologin" method="POST">
+    <form id="login-form" class="modal-content animate" action="/dologin" method="POST">
         <div class="imgcontainer">
             <span onclick="closeBox('#login')" class="close" title="Close Modal">&times;</span>
             <!--onclick="document.getElementById('login').style.display='none'"-->
@@ -11,8 +11,8 @@
 
             <h3 class="boxtitle">Login</h3>
 
-            <input type="text" placeholder="Enter your email" name="email" required>
-            <input type="password" placeholder="Enter Password" name="password" required>
+            <input type="text" placeholder="Enter your email" name="email" id="login-email" required>
+            <input type="password" placeholder="Enter Password" name="password" id="login-password" required>
 
             <!-- Display any login messages -->
             <p id="login-message"></p>

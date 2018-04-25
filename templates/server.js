@@ -272,7 +272,6 @@ app.post('/dologin', function(req,res){
             // openBox('#login');
             console.log("NOT FOUND");
             res.redirect('/');
-            document.getElementById('login-message').innerText = "E-Mail Not Found";
             return;
         }
 
@@ -290,6 +289,15 @@ app.post('/dologin', function(req,res){
 
 
     });
+
+});
+
+
+app.post('/checklogin', function(req,res) {
+    var e = req.body.email;
+    var p = req.body.password;
+
+    // db.collection('users').findOne()
 
 });
 

@@ -272,7 +272,7 @@ app.post('/dologin', function(req,res){
             // openBox('#login');
             console.log("NOT FOUND");
             res.redirect('/');
-            $('#login-message').innerText = "E-Mail Not Found";
+            document.getElementById('login-message').innerText = "E-Mail Not Found";
             return;
         }
 

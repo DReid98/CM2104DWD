@@ -292,7 +292,7 @@ app.post('/dologin', function(req,res){
 
 });
 
-
+/*
 app.post('/checklogin', function(req,res) {
     var e = req.body.email;
     var p = req.body.password;
@@ -300,7 +300,7 @@ app.post('/checklogin', function(req,res) {
     // db.collection('users').findOne()
 
 });
-
+*/
 
 // ----- REGISTER NEW USER -----
 
@@ -320,12 +320,40 @@ app.post('/register', function(req,res) {
         "bagged": []
     };
 
-    // Check username
-        // Username taken
+
     // Check email
         // Already registered
+    db.collection('users').findOne({"email":email},function(err,result) {
+        if (err) throw err;
+
+        if (result) {
+            console.log("Email already registered");
+            res.redirect('/');
+        }
+
+    });
+
+    // Check username
+        // Username taken
+
+    db.collection('users').findOne({"username":username}, function(err,result) {
+        if (err) throw err;
+
+        if (result) {
+            console.log("Username taken");
+            res.redirect('/');
+        }
+    });
 
 
+    db.collection('users').save(newUserData, function(err,result) {
+        if (err) throw err;
+
+        console.log("New User saved to Database");
+
+        res.redirect('/');
+
+    });
 
 
 });

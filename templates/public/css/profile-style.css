@@ -91,14 +91,14 @@ p{
 #bagged {
     line-height: 0.5;
     font-size: 20pt;
-    color: #8e8e8e;
+    color: #000000;
     padding-bottom: 10px;
 }
 
 #remaining {
     line-height: 0.5;
     font-size: 12pt;
-    color: #cdcdcd;
+    color: #8e8e8e;
     padding-top: 10px !important;
 }
 

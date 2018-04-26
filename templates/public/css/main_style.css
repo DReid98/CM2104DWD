@@ -203,21 +203,21 @@ footer div {
         background-color: chocolate;
     }
     */
-
+/*
     .header {
         height: 100%;
     }
-
+*/
     .logo {
         width: 90vw;
     }
 
     .parallax {
-        height: 80vh;
+        height: 80vh !important;
     }
     
     nav {
-        height: 20vh;
+        height: 20vh !important;
     }
     
     #nav-menu {

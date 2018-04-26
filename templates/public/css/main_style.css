@@ -99,7 +99,8 @@ nav {
 }
 
 
-@media only screen and (min-width: 516px) {
+/* Laptop Screens */
+@media only screen and (min-width: 517px) {
 
     .menu-btn {
         font-family: Verdana, sans-serif;
@@ -193,9 +194,17 @@ footer div {
     margin: auto;
 }
 
+
+/* Mobile Screens */
 @media only screen and (max-width: 516px) {
+    /*
     .info {
         background-color: chocolate;
+    }
+    */
+
+    .logo {
+        width: 90%;
     }
     
     nav {

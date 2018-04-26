@@ -87,6 +87,10 @@ footer, div {
     #form table tr {
         width: auto;
     }
+
+    #form table tr input {
+        width: 50%;
+    }
 }
 
 

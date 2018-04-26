@@ -206,9 +206,13 @@ footer div {
     .logo {
         width: 90vw;
     }
+
+    .parallax {
+        height: 90vh;
+    }
     
     nav {
-        height: 40px;
+        height: 10vh;
     }
     
     #nav-menu {
@@ -231,7 +235,7 @@ footer div {
         color: white;
         display: block;
         transition: 0.3s;
-        font-family: Verdana;
+        font-family: Rockwell, sans-serif;
     }
     
     .menu-btn:hover {

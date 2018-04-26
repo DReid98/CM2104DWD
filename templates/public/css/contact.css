@@ -89,8 +89,13 @@ footer, div {
     }
 
     #form table tr input {
-        width: 40% !important;
+        width: 100% !important;
     }
+
+    #Button {
+        width: 100%;
+    }
+
 }
 
 

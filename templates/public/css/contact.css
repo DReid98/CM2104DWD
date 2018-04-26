@@ -49,11 +49,13 @@ footer, div {
     width: 300px;
 }
 
-#Button {display: inline-block;
-       /*padding: 260px;*/
-       padding-top: 20px;
-       padding-bottom: 30px;
-       text-align: center;
+#Button {
+    display: inline-block;
+    /*padding: 260px;*/
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: center;
+    width: 100%;
 }
 
 

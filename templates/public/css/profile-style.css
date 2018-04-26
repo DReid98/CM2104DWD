@@ -102,6 +102,15 @@ p{
     padding-top: 10px !important;
 }
 
+
+/* MOBILE SCREENS */
+@media only screen and (max-width: 516px) {
+    .Content {
+        width: 80% !important;
+    }
+}
+
+
 /*
 .Content {
   width: 90%; /* wider content - no sidebar

@@ -99,6 +99,7 @@ footer, div {
         width: auto;
     }
 
+    #message,
     #form table tr input {
         width: 100% !important;
     }

@@ -242,6 +242,7 @@ app.get('/profile', function(req,res) {
         res.redirect('/');
     }
 
+
 });
 
 app.get('/logout', function(req,res) {

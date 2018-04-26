@@ -127,7 +127,9 @@ img {
         width: 90%;
     }
 
-
+    #myInput {
+        width: 100%;
+    }
 
 }
 

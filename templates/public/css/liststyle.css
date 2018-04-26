@@ -55,7 +55,7 @@ h4 {
   /* -webkit-transition: 0.15s ease-in-out; */
   height: auto;
 /*     padding-bottom: 10px;*/
-/*     overflow: auto;*/
+     overflow-x: auto;
   position: relative;
   top: 80%;
   left: 0;
@@ -117,3 +117,33 @@ img {
 .inline {
     padding-left: 55px;
 }
+
+
+
+
+@media only screen and (max-width: 516px) {
+
+    .content {
+        width: 90%;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

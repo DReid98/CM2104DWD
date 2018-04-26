@@ -208,16 +208,21 @@ footer div {
         height: 100%;
     }
 */
+
+    .page {
+        width: 90%;
+    }
+
     .logo {
         width: 90vw;
     }
 
-    /*.parallax {*/
-        /*height: 80vh !important;*/
-    /*}*/
+    .parallax {
+        height: 90vh !important;
+    }
     
     nav {
-        height: 50px !important;
+        height: 10vh !important;
     }
     
     #nav-menu {
@@ -263,7 +268,8 @@ footer div {
     #open-btn {
         display: block;
         cursor: pointer;
-        font-family: Rockwell, serif;
+        font-family: Rockwell, sans-serif;
+        font-size: 24px;
     }
     
 }

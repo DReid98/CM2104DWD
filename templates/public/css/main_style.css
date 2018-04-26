@@ -147,7 +147,7 @@ nav {
 
 
 
-.menu-btn:hover {
+.menu-btn:hover:focus {
     background-color: lightgrey;
     color: black;
 }

@@ -239,7 +239,7 @@ app.get('/profile', function(req,res) {
         });
     }
     else {
-        res.render('pages/index');
+        res.redirect('/');
     }
 
 });

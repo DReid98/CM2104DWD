@@ -69,17 +69,17 @@ img {
 
 
 
-nav {
-    width: 100% !important;
-    height:36px;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    background-color: #0B486B;
-    color: white;
-    padding: 1px 0;
-    z-index: 2;
-}
+/*nav {*/
+    /*width: 100% !important;*/
+    /*height:36px;*/
+    /*display: flex !important;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*background-color: #0B486B;*/
+    /*color: white;*/
+    /*padding: 1px 0;*/
+    /*z-index: 2;*/
+/*}*/
 
 #nav-login,
 #nav-logout,
@@ -99,22 +99,35 @@ nav {
 
 
 @media only screen and (min-width: 516px) {
+
+    nav {
+        width: 100% !important;
+        height:36px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        background-color: #0B486B;
+        color: white;
+        padding: 1px 0;
+        z-index: 2;
+    }
+
     .menu-btn {
-    font-family: Verdana, sans-serif;
-    white-space: normal;
-    padding: 8px 16px;
-    float: left;
-    width: auto;
-    border: none;
-    display: block;
-    outline: 0;
-    user-select: none;
-    vertical-align: middle;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    background-color: inherit;
-}
+        font-family: Verdana, sans-serif;
+        white-space: normal;
+        padding: 8px 16px;
+        float: left;
+        width: auto;
+        border: none;
+        display: block;
+        outline: 0;
+        user-select: none;
+        vertical-align: middle;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        background-color: inherit;
+    }
 }
 
 /*

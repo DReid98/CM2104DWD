@@ -212,12 +212,12 @@ footer div {
         width: 90vw;
     }
 
-    .parallax {
-        height: 80vh !important;
-    }
+    /*.parallax {*/
+        /*height: 80vh !important;*/
+    /*}*/
     
     nav {
-        height: 20vh !important;
+        height: 50px !important;
     }
     
     #nav-menu {
@@ -263,6 +263,7 @@ footer div {
     #open-btn {
         display: block;
         cursor: pointer;
+        font-family: Rockwell, serif;
     }
     
 }

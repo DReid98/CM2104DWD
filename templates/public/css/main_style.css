@@ -206,7 +206,7 @@ footer div {
 
     .header {
         height: 100vh !important;
-        max-height: 100%;
+        max-height: 100vh;
     }
 
     .logo {

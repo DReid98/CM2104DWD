@@ -1,6 +1,16 @@
+
+/* public/css/main_style.css */
+/* CSS for Home Page */
+
+
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 
+
+
+/* ---------- */
+
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
 article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}
 audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}
@@ -25,6 +35,8 @@ legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}t
 ::-webkit-input-placeholder{color:inherit;opacity:0.54}
 ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
 /* End extract */
+
+/* ---------- */
 
 html, body {
     overflow-x: hidden;

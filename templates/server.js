@@ -284,35 +284,41 @@ app.get('/logout', function(req,res) {
 // ----- LOGIN -----
 
 app.post('/dologin', function(req,res){
-    console.log(JSON.stringify(req.body));
+    // console.log(JSON.stringify(req.body));
 
     // use body-parser to get user login credentials
     var username = req.body.username;
     var pword = req.body.password;
 
-    console.log(username);
-    console.log(pword);
+    // console.log(username);
+    // console.log(pword);
 
+    // Get user from MongoDB
     db.collection('users').findOne({"username":username}, function(err,result) {
 
         // throw err if err
         if (err) throw err;
 
+
+        // if username not found, redirect to index
         if (!result) {
             // openBox('#login');
-            console.log("NOT FOUND");
+            // console.log("NOT FOUND");
             res.redirect('/');
             return;
         }
 
+        // if username found, check password
         if (result.password == pword) {
             console.log("FOUND");
             req.session.loggedin = true;
             var sess = req.session;
             sess.username = result.username;
+
+            // if password matches, redirect to profile
             res.redirect('/profile');
         }
-        else {
+        else { // if password doesn't match, redirect to index
             console.log("WRONG PASSWORD ?");
             res.redirect('/');
         }
@@ -335,13 +341,15 @@ app.post('/checklogin', function(req,res) {
 // ----- REGISTER NEW USER -----
 
 app.post('/register', function(req,res) {
-    console.log(JSON.stringify(req.body));
+    // console.log(JSON.stringify(req.body));
 
+    // get user details from form
     var name = req.body.name;
     var email = req.body.email;
     var username = req.body.username;
     var pword = req.body.password;
 
+    // new data variable - to store in database
     var newUserData = {
         "name": name,
         "email": email,
@@ -356,6 +364,7 @@ app.post('/register', function(req,res) {
     db.collection('users').findOne({"email":email},function(err,result) {
         if (err) throw err;
 
+        // if email is found, redirect to index
         if (result) {
             console.log("Email already registered");
             res.redirect('/');
@@ -369,6 +378,7 @@ app.post('/register', function(req,res) {
     db.collection('users').findOne({"username":username}, function(err,result) {
         if (err) throw err;
 
+        // if username is already registered, redirect to index
         if (result) {
             console.log("Username taken");
             res.redirect('/');
@@ -376,11 +386,14 @@ app.post('/register', function(req,res) {
     });
 
 
+    // if both email and username are not registered,
+    // add new user data to db collection
     db.collection('users').save(newUserData, function(err,result) {
         if (err) throw err;
 
-        console.log("New User saved to Database");
+        // console.log("New User saved to Database");
 
+        // redirect to index once data stored
         res.redirect('/');
 
     });
@@ -392,7 +405,7 @@ app.post('/register', function(req,res) {
 // ----- FORGOTTEN PASSWORD -----
 
 app.post('/forgotpassword', function(req,res) {
-
+    // NOT IMPLEMENTED
 });
 
 

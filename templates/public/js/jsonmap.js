@@ -1,5 +1,13 @@
+
+// public/js/jsonmap.js
+
+// JS to create Leaflet Map for Munros
+
+
+// set up map object
 var mymap = L.map('mapid').setView([56.8189342,-4.0756789], 6.56);
 
+// base map overlay
 var baseMap = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
@@ -77,7 +85,7 @@ $(document).ready(function() {
 
 /* Layer Groups for Pins */
 var smrLocations = L.layerGroup([]);
-var baggedMunros = L.layerGroup([]); //Testing Only
+var baggedMunros = L.layerGroup([]); // user 'bagged' munros
 
 var munroEasy = L.layerGroup([]);
 var munroMedium = L.layerGroup([]);
@@ -177,6 +185,7 @@ $(document).ready(function () {
 });
 */
 
+// function to get user's 'bagged' munros from MongoDB
 function getUserMunros(callback) {
     $.ajax({
         type: "GET",
@@ -187,6 +196,7 @@ function getUserMunros(callback) {
     });
 }
 
+// get boolean value - user logged in or not
 function getSession(callback) {
     $.ajax({
         type: "GET",
@@ -198,6 +208,7 @@ function getSession(callback) {
     });
 }
 
+// generate markers on leaflet map using JSON data of munros from MongoDB
 function getMunros(list,session) {
     $.ajax({
         type: "GET",
@@ -211,20 +222,24 @@ function getMunros(list,session) {
             //Add munro markers to map
             var munros = result;
 
+            // for every munro
             for (var i = 0; i < munros.length; i++) {
 
 
+                // Create Marker
                 // var marker = L.marker([munros[i].latitude,munros[i].longitude], {icon:greenIcon});
                 var marker = L.marker([munros[i].latitude, munros[i].longitude]);
 
                 // console.log(munros[i]);
 
+                // Set up custom attributes on marker
                 marker.mName = munros[i].name;
                 marker.mHeight = munros[i].height;
                 marker.mLat = munros[i].latitude;
                 marker.mLng = munros[i].longitude;
                 marker.mLocation = munros[i].region;
 
+                // if custom image available, store as attribute
                 if (munros[i].image) {
                     marker.mImage = munros[i].image;
                 }
@@ -233,6 +248,7 @@ function getMunros(list,session) {
                 // marker.mDiff = munros[i].difficulty;
 
 
+                // Add tooltip to marker, using munro name
                 marker.bindTooltip(munros[i].name, {direction: "top", offset: [0, -40]});
 
                 marker.on('click', openBox);
@@ -251,21 +267,25 @@ function getMunros(list,session) {
                 // console.log(munros[i].name);
 
 
+                // if user logged in == true
+                //  --  check if munro is in user munro array
                 if (session && $.inArray(munros[i].name, list) != -1) {
+                    //set all 'bagged' munros to have blue marker
                     marker.setIcon(blueIcon);
                     baggedMunros.addLayer(marker);
                 }
-                else {
-                    if (height > 1000) {
+                else { // for all other munros / user not logged in
+                    //determine marker colour using height and add to correct layer group
+                    if (height > 1000) { // tall munros
                         marker.setIcon(redIcon);
                         munroHard.addLayer(marker);
                     }
-                    else if (height > 950) {
+                    else if (height > 950) { // medium munros
                         marker.setIcon(yellowIcon);
                         munroMedium.addLayer(marker);
                     }
                     else {
-                        marker.setIcon(greenIcon);
+                        marker.setIcon(greenIcon); // small munros
                         munroEasy.addLayer(marker);
                     }
                 }
@@ -280,9 +300,11 @@ $(document).ready(function() {
     var mBagged;
     var mapOverlays;
 
+    // get user session boolean value
     getSession(function(sessdata) {
         console.log(sessdata);
 
+        // if user logged in, get user munros and add markers map ( with blue markers )
         if (sessdata) {
             getUserMunros(function(data) {
                 console.log(data);
@@ -302,6 +324,7 @@ $(document).ready(function() {
             })
         }
         else {
+            // if user not logged in, add markers to map ( excluding any blue markers )
             mBagged = ["unknown"];
             getMunros(mBagged);
 
@@ -581,11 +604,16 @@ $(document).ready(function() {
            console.log(result.smr);
            var smr = result.smr;
 
+           // for each station in JSON file
            for (var i = 0; i < smr.length; i++) {
+
+               // create marker
                var marker = L.marker([smr[i].lat,smr[i].long], {icon: smrIcon});
 
+               // give marker a name, using custom attribute
                marker.smrName = smr[i].name;
 
+               // add marker tooltip, displaying name
                marker.bindTooltip(smr[i].name,{direction:"top", offset:[0,-40]});
 
                // marker.addTo(mymap);
@@ -702,6 +730,7 @@ function openBox(e) {
 
     var info = document.getElementById("mText");
 
+    // generate HTML for marker popup box
     var output = "<table><tr><td>Height</td><td>" + m.mHeight + "</td></tr>";
     output += "<tr><td>Location</td><td>" + m.mLocation + "</td></tr>";
     output += "<tr><td>Latitude</td><td>" + m.mLat + "</td></tr>";
@@ -739,7 +768,7 @@ window.onclick = function(event) {
 // var listName = "Ben Nevis";
 // var listHeight = 1345;
 
-// Show marker of chosen Munro from List
+// Show marker of chosen Munro from List - Not Implemented
 function getMarker(listM) {
 
     var m;

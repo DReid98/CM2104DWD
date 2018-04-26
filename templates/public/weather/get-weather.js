@@ -1,3 +1,9 @@
+
+// public/weather/get-weather.js
+
+// used in conjunction with find-locations.js
+
+
 /* JS to get local weather */
 
 /*
@@ -26,6 +32,8 @@ $(document).ready(function() {
 });
 */
 
+
+// MetOffice DataPoint Resource URL & API Key
 var url = "http://datapoint.metoffice.gov.uk/public/data/";
 var key = "key=b02b078d-1b64-44b3-90c7-3caacdbd442b";
 
@@ -50,9 +58,12 @@ var getWeather = function(lat,long) {
 };
 */
 
+
+// function to get five-day, 3-hourly weather forecasts for locations
 var getWeather = function(lat,long) {
     var closest, locations, standpoint;
 
+    // get weather station sitelist
     var siteList = url + "val/wxfcs/all/json/sitelist?" + key;
 
     $.getJSON(siteList,function(data){
@@ -69,6 +80,7 @@ var getWeather = function(lat,long) {
 
         console.log("Closest: " + closest.location.id);
 
+        // get API forecast url using closest location id
         var forecast = url + "val/wxfcs/all/json/" + closest.location.id + "?res=3hourly&" + key;
 
         $.getJSON(forecast, function(result) {
@@ -83,7 +95,7 @@ var getWeather = function(lat,long) {
 
 
 // Image Arrays for Weather
-// Position cooresponds to MetOffice definitions
+// Position corresponds to MetOffice definitions
 // https://www.metoffice.gov.uk/datapoint/support/documentation/code-definitions
 
 var weatherIcon = [
@@ -123,7 +135,7 @@ var weatherIcon = [
 
 
 
-
+// display forecast on map pop-up
 var displayForecast = function(weather) {
 
     //Variables
@@ -142,6 +154,8 @@ var displayForecast = function(weather) {
 
         tab = "tab" + (i + 1);
 
+
+        // update tab names for five day forecasts
         if (tab == "tab1") {
             document.getElementById(tab).innerHTML = "Today";
         }
@@ -160,7 +174,7 @@ var displayForecast = function(weather) {
 
 
 
-
+        // GENERATE HTML FOR MAP MARKER POP-UPS TO DISPLAY WEATHER
 
         // Open table tag for forecasts
         output = "<table class='forecast'><tr>";

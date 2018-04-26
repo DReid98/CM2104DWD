@@ -1,3 +1,9 @@
+
+// public/js/login-header.js
+
+// JS to change navigation dependent on user login status
+
+
 //If user logged in - show logout and profile nav buttons
 
 $(document).ready(function(){
@@ -6,7 +12,7 @@ $(document).ready(function(){
         url: "/getsession",
         success: function(sessdata)
         {
-            if (sessdata) {
+            if (sessdata) { //if user logged in
                 //Hide Login button
                 $('#nav-login').css("display","none");
 
@@ -14,7 +20,7 @@ $(document).ready(function(){
                 $('#nav-profile').css("display","flex");
                 $('#nav-logout').css("display","flex");
             }
-            else {
+            else { // if no user logged in
                 //Show Login button
                 $('#nav-login').css("display","flex");
 

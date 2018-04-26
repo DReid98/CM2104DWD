@@ -1,4 +1,10 @@
 
+// public/js/openlogin.js
+
+// JS to open and close Login/Register/Forgot Password boxes
+
+
+
 //Open Login pop-up
 function openLogin() {
     $('#login').css("display","flex");

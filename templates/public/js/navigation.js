@@ -1,3 +1,6 @@
+
+// NOT USED - OLD IMPLEMENTATION ATTEMPT - BEFORE EJS & TEMPLATING
+
 $("#nav-home").click(function() {
     $("#page").load("f.html");
 });

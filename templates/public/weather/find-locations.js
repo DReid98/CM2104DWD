@@ -1,3 +1,15 @@
+
+// public/weather/find-locations.js
+
+/*
+Taken from MetOffice DataPoint
+url: https://www.metoffice.gov.uk/datapoint/support/tutorials/nearest-lat-long
+"Calculate closest locations to a latitude and longitude" - Tutorial
+
+Used in conjunction with get-weather.js to generate weather on map pop-ups
+
+*/
+
 var distVars = {
     r: 6371.01,
     radian: Math.PI / 180

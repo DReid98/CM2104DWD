@@ -2,6 +2,12 @@
  * Created by 1603232 on 25/04/2018.
  */
 
+// public/js/check-login.js
+
+// NOT CURRENTLY IMPLEMENTED
+
+// JS for live/client-side login checks
+
 function checkLogin() {
 
     var email = document.getElementById('login-email');

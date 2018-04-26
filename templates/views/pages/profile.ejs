@@ -48,6 +48,8 @@
         <div class="Content">
 
             <!-- progress - text-based -->
+            <!-- data-test-value set using ejs to be number of bagged munros,
+              value used in JS file profilechart.js to draw chart -->
             <p id="progress-text" data-test-value="<%= user.bagged.length %>"><%= user.bagged.length %> / 282</p>
 
             <!-- list of bagged munros - using EJS -->

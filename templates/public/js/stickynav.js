@@ -17,6 +17,9 @@ function stickyFunction() {
 }
 */
 
+// public/js/stickynav.js
+
+// Sticky top navigation bar
 
 // console.log($('.parallax').height());
 // console.log($(this).scrollTop());

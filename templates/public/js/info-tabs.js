@@ -1,4 +1,8 @@
 
+// public/js/info-tabs.js
+
+// JS for tabs on information page
+
 function openSection(evt, sectionName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");

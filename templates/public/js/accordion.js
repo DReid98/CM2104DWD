@@ -1,14 +1,21 @@
+
+// public/js/accordion.js
+
+// JS to generate accordion of munros on list page
+
+
+// Listener Function for check boxes - pass in id number
 function listenerEx(i) {
-    if($("#checkBox" + i).is(":checked")) {
+    if($("#checkBox" + i).is(":checked")) { //if checkbox is checked, add munro to user list
         $("#bMount" + i).show();
         bagMunro(i);
-    } else {
+    } else { // remove munro from user list
         $("#bMount" + i).hide();
         removeMunro(i);
     }
 }
 
-
+// add munro to user list, by passing id by POST
 function bagMunro(i) {
     $.ajax({
         type: "POST",
@@ -22,6 +29,7 @@ function bagMunro(i) {
     })
 }
 
+// remove munro from user list, by passing id by POST
 function removeMunro(i) {
     $.ajax({
         type: "POST",
@@ -48,6 +56,10 @@ function findMunro(i) {
 }
 */
 
+
+
+// ATTEMPT AT HANDLING APOSTROPHES IN MUNRO NAME
+/*
 var entityMap = {
     "'": '&#39;'
 };
@@ -64,8 +76,12 @@ function returnHtml(string) {
         return entityMap[s];
     })
 }
+*/
+// END
 
 
+
+// OLD FUNCTION TO GENERATE ACCORDION USING LOCAL JSON FILE
 /*
 $(document).ready(function() {
     var displayMunros = $('#accordion');
@@ -128,7 +144,10 @@ $(document).ready(function() {
 */
 
 
+// GENERATE ACCORDION USING MUNRO JSON DATA FROM MONGODB
 function getAccordion(list,session) {
+
+    // target accordion element
     var displayMunros = $('#accordion');
 
     $.ajax({
@@ -141,12 +160,17 @@ function getAccordion(list,session) {
             // var munros = result.munros;
             var munros = result;
 
+            // for every munro in result
             for(var i = 0; i < munros.length; i++)
             {
+
+                // generate HTML output for Accordion
                 var output = "<h4 class='munrotitle'>" + munros[i].name + "<img class='bMount' id='bMount" + i + "' src='/img/blueMnt.png' alt='Blue Mountain'>";
 
                 output += "</h4><div class='whiteback'><table><tr><td>Description: </td><td>" + munros[i].description + "</td></tr><tr><td>Region: </td><td>" + munros[i].region + "</td></tr><tr><td>Height: </td><td>" + munros[i].height + "</td></tr><tr><td>Latitude: </td><td>" + munros[i].latitude + "</td></tr><tr><td>Longitude: </td><td>" + munros[i].longitude + "</td></tr><tr><td>Grid Reference: </td><td>" + munros[i].gridReference + "</td></tr><tr><td>Difficulty: </td><td>";
 
+
+                // parseInt munro height for categories
                 var height = munros[i].height.substring(0,5);
                 if(height.substring(4,5) == "m") {
                     height = height.substring(0,4);
@@ -162,14 +186,17 @@ function getAccordion(list,session) {
                 }
 
 
+                // if user logged in, add checkboxes
                 if (session) {
                     output += "</td></tr><tr><td>Climbed: </td><td><input type='checkbox' id='checkBox" + i + "' onclick='listenerEx(" + i + ")'></td></tr></table></div>";
                 }
                 else {
+                    // no user, don't show checkboxes
                     output += "</td></tr></table></div>"
                 }
 
 
+                // display blue munro if checkbox checked
                 currentFunction = function() {
                     if($("#checkBox" + i).is(":checked")) {
                         $("#bMount" + i).show();
@@ -189,11 +216,13 @@ function getAccordion(list,session) {
 
 
 
+                // add HTML output to accordion target element
                 displayMunros.append(output);
 
-                if (session && $.inArray(munros[i].name, list) != -1) {
+                // if user logged in, get list of bagged munros
+                if (session && $.inArray(munros[i].name, list) != -1) { // check munro on user list
                     console.log(munros[i].name);
-                    $("#checkBox" + i).attr('checked',true);
+                    $("#checkBox" + i).attr('checked',true); //checkbox is checked to show
                     // $("#bMount" + i).show();
                     currentFunction();
                 }
@@ -202,6 +231,8 @@ function getAccordion(list,session) {
                 }
 
             }
+
+            // jQuery Accordion, allow collapsible and default: all closed
             $( "#accordion" ).accordion({collapsible:true, active: false});
             // $(".bMount").hide();
         }
@@ -209,7 +240,7 @@ function getAccordion(list,session) {
 }
 
 
-
+// get list of user's bagged munros
 function getUserMunros(callback) {
     $.ajax({
         type: "GET",
@@ -220,6 +251,7 @@ function getUserMunros(callback) {
     });
 }
 
+// get session.loggedin boolean value
 function getSession(callback) {
     $.ajax({
         type: "GET",
@@ -231,21 +263,26 @@ function getSession(callback) {
     });
 }
 
+// when page ready, run function
 $(document).ready(function() {
 
     var mBagged;
 
+    // get session boolean
     getSession(function(sessdata) {
-        if (sessdata) {
+        if (sessdata) { // if user logged in, get user munros
             getUserMunros(function(data){
                 mBagged = data;
 
+                // generate accordion
                 getAccordion(mBagged,sessdata);
 
             })
         }
-        else {
+        else { // no user
             mBagged = ["unknown"];
+
+            //generate accordion, no checkboxes
             getAccordion(mBagged,sessdata);
 
         }
@@ -256,7 +293,7 @@ $(document).ready(function() {
 
 
 
-
+// Search Bar Function - Accordion Panels Must Be Closed
 function myFunction() {
     // Declare variables
     var input, filter, h4, div, a, i;

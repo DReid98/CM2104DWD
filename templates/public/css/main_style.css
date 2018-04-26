@@ -296,6 +296,10 @@ footer div {
     padding: 1px;
 }
 
+.infolink:focus {
+    background-color: #e6f2ff;
+}
+
 .infolink a {
     text-decoration: none;
     color: #000000;

@@ -46,7 +46,7 @@ footer, div {
 }
 
 #form table tr td input {
-    width: 300px;
+    /*width: 300px;*/
 }
 
 #Button {
@@ -68,12 +68,19 @@ footer, div {
 
 #message {
     text-align: left;
-    width: 300px;
+    /*width: 300px;*/
     resize: none;
     /*margin: auto;*/
     /*line-height: 0.5;*/
 }
 
+@media only screen and (min-width: 517px) {
+    #message,
+    #form table tr td input {
+        width: 300px;
+    }
+
+}
 
 @media only screen and (max-width: 516px) {
     #form {

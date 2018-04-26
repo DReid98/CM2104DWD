@@ -38,7 +38,7 @@ footer, div {
        text-align: left;
        /*justify-content: space-between;*/
        color: #0B486B;
-       font-family: Rockwell;}
+       font-family: Rockwell, sans-serif;}
        /*input {width: 200%;}*/
 
 #form table {
@@ -60,13 +60,31 @@ footer, div {
 
 #textarea {
     height: 100px;
+    padding: 0;
 }
 
 #message {
-    text-align: center;
+    text-align: left;
     width: 40%;
     margin: auto;
+    line-height: 0.5;
 }
+
+
+@media only screen and (max-width: 516px) {
+    #form {
+        width: 90%;
+    }
+
+    #form table {
+        width: 100%;
+    }
+
+    #form table tr {
+        width: auto;
+    }
+}
+
 
 /*
 #text {

@@ -50,7 +50,7 @@ footer, div {
 }
 
 #Button {display: inline-block;
-       padding: 260px;
+       /*padding: 260px;*/
        padding-top: 20px;
        padding-bottom: 30px;
        text-align: center;

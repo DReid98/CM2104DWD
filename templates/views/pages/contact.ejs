@@ -1,14 +1,17 @@
 <!-- views/pages/contact.ejs -->
 
+<!-- CONTACT PAGE-->
+
 <!DOCTYPE html>
 
 <html>
 
 <head>
-    <title></title>
+    <title>Contact Us - Munro Spotter</title>
 
     <% include ../partials/head.ejs %>
 
+    <!-- CSS for contact form -->
     <link rel="stylesheet" href="/css/contact.css">
 
 </head>
@@ -22,10 +25,15 @@
     <main>
         <section class="page">
             <h2 id="title">CONTACT PAGE</h2>
+
+            <!-- CONTACT FORM -->
+            <!-- form doesn't send message anywhere
+            redirects to pages/submit showing sent message -->
             <form id="form" action="/send" method="post">
                 <table border="0" cellspacing= "5" cellpadding="5">
 
 
+                    <!-- enter name - not required -->
                     <tr id= "name">
                         <td>NAME:</td>
                         <td>
@@ -34,6 +42,7 @@
                     </tr>
 
 
+                    <!-- enter email - required -->
                     <tr id= "email">
                         <td>EMAIL ADDRESS:</td>
                         <td>
@@ -41,6 +50,7 @@
                         </td>
                     </tr>
 
+                    <!-- enter message - required -->
                     <tr id="Inquiry">
                         <td>INQUIRY:</td>
                         <td>
@@ -49,6 +59,8 @@
                         </td>
                     </tr>
                 </table>
+
+                <!--submit message -->
                 <div id="Button">
                     <input type="submit" value="Submit">
                 </div>

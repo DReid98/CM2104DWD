@@ -11,7 +11,7 @@
 
             <h3 class="boxtitle">Login</h3>
 
-            <input type="text" placeholder="Enter your email" name="email" id="login-email" required>
+            <input type="text" placeholder="Enter Username" name="username" id="login-username" required>
             <input type="password" placeholder="Enter Password" name="password" id="login-password" required>
 
             <!-- Display any login messages -->
@@ -22,9 +22,13 @@
             <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
+
+            <!-- REGISTER NEW USER LINK -->
             <span id = "register-link" >or <a href="#" onclick="openBox('#register')">Register</a></span>
             <div id = "popUp-bottom">
                 <button type="button" onclick="closeBox('#login')" class="cancelbtn log-btn">Cancel</button>
+
+                <!-- FORGOTTEN PASSWORD LINK -->
                 <span class="psw"><a href="#" onclick="openBox('#forgottenPassword')">Forgotten password</a></span>
             </div>
         </div>
@@ -66,6 +70,7 @@
 
 
 <!-- FORGOTTEN PASSWORD - MODAL -->
+<!-- DOESN'T WORK -->
 <div id="forgottenPassword" class="modal">
     <form class="modal-content animate" action="/forgotpassword" method="GET" >
         <div class="imgcontainer">
@@ -76,6 +81,7 @@
 
             <h3 class="boxtitle">Forgotten Password</h3>
 
+            <!-- enter email to recover password - DOESN'T WORK -->
             <input type="text" placeholder="Enter your E-mail" name="email" required>
             <button class="log-btn" id = "reset-button" type="submit">Reset password</button>
 

@@ -1,11 +1,13 @@
 <!-- views/pages/list.ejs -->
 
+<!-- ACCORDION OF MUNROS -->
+
 <!DOCTYPE html>
 
 <html>
 
 <head>
-    <title></title>
+    <title>Munro List - Munro Spotter</title>
 
     <% include ../partials/head.ejs %>
 
@@ -26,7 +28,7 @@
 
         <!-- Filter search bar code -->
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search...">
-        <!-- Sort combobox code -->
+        <!-- Sort combobox code - DOESN'T WORK -->
         <div class="float_center">
             <label for="sort-by" class="inline">Sort by:</label>
             <select id="sort-by" class="all">
@@ -56,6 +58,7 @@
 
 <% include ../partials/scripts.ejs %>
 
+<!-- script to generate munro accordion -->
 <script src="/js/accordion.js" type="text/javascript"></script>
 
 </body>

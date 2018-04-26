@@ -1,11 +1,14 @@
 <!-- views/pages/info.ejs -->
 
+<!-- INFORMATION PAGE -->
+<!-- placeholder content only -->
+
 <!DOCTYPE html>
 
 <html>
 
 <head>
-    <title></title>
+    <title>Information - Munro Spotter</title>
 
     <% include ../partials/head.ejs %>
 
@@ -27,15 +30,17 @@
 
         <p>All the information you need to climb the Munros.</p>
 
+        <!-- information tab buttons -->
         <div class="tab">
             <button class="info-tablinks" onclick="openSection(event, 'What')" id="defaultOpen">What do you need to climb?</button>
-            <button class="info-tablinks" onclick="openSection(event, 'DoDont')">Do and Don't of the Munros</button>
+            <button class="info-tablinks" onclick="openSection(event, 'DoDont')">Dos and Don'ts of the Munros</button>
             <button class="info-tablinks" onclick="openSection(event, 'Safety')">Safety First!</button>
             <button class="info-tablinks" onclick="openSection(event, 'FloraFauna')">Flora and Fauna</button>
             <button class="info-tablinks" onclick="openSection(event, 'GetThere')">How to get there?</button>
             <button class="info-tablinks" onclick="openSection(event, 'BeB')"> B&B and other accomodations</button>
         </div>
 
+        <!-- What do you need to climb? - tab content -->
         <div>
             <div id="What" class="tabcontent">
                 <h3>What do you need to climb?</h3>
@@ -54,7 +59,9 @@
 
 
             </div>
+            <!-- end -->
 
+            <!-- Dos and don'ts of the munros - tab content -->
             <div id="DoDont" class="tabcontent">
                 <h3>Do and Don't of the Munros</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas vestibulum diam eget ullamcorper. Aenean convallis dui et tortor viverra imperdiet. Donec consectetur, dui in tristique laoreet, ligula lectus tempus metus, eget laoreet mauris dolor a enim. Morbi gravida, ligula eu facilisis hendrerit, turpis felis laoreet urna, vehicula sollicitudin erat leo dapibus leo. Duis feugiat mi in fringilla scelerisque. Morbi rhoncus dapibus augue sed euismod. Mauris finibus, ex vel venenatis posuere, nisi mi pellentesque metus, nec posuere nisl dui vel eros. Curabitur ut massa sed enim malesuada porta. Nunc at tellus tempor, iaculis enim at, molestie dolor.</p>
@@ -73,7 +80,9 @@
 
 
             </div>
+            <!-- end -->
 
+            <!-- safety first - tab content-->
             <div id="Safety" class="tabcontent">
                 <h3>Safety First!</h3>
 
@@ -93,7 +102,9 @@
 
 
             </div>
+            <!-- end -->
 
+            <!-- flora and fauna - tab content -->
             <div id="FloraFauna" class="tabcontent">
                 <h3>Flora and Fauna</h3>
 
@@ -121,7 +132,9 @@
 
 
             </div>
+            <!-- end -->
 
+            <!-- how to get there - tab content -->
             <div id="GetThere" class="tabcontent">
                 <h3>How to get there?</h3>
                 <p>Maecenas eget pulvinar dui. Morbi nec quam pellentesque, consectetur lectus nec, pulvinar magna. Aenean varius tempus est a commodo. Donec rutrum mauris non ipsum tempus ultrices. Nunc leo odio, hendrerit maximus urna at, feugiat tincidunt diam. Quisque aliquam imperdiet laoreet. Nam et blandit nisl. Nulla nunc erat, vulputate sed odio sed, varius aliquam tellus. Etiam lacinia lacus sit amet leo blandit tempor. Phasellus semper molestie posuere. Maecenas interdum metus lacus, at iaculis felis pretium sit amet.
@@ -162,7 +175,9 @@
 
 
             </div>
+            <!-- end -->
 
+            <!-- B&B and other accommodation - tab content -->
             <div id="BeB" class="tabcontent">
                 <h3>B&B and other accomodations</h3>
                 <p>Integer euismod vitae orci eget vulputate. Maecenas sed condimentum ipsum. Donec ultrices viverra porttitor. Etiam molestie enim non magna auctor, id commodo erat rutrum. Aliquam non tellus ut lacus posuere sagittis vitae in leo. Nulla luctus facilisis imperdiet. Duis varius nisl cursus leo aliquam, in interdum lectus consectetur. Quisque mattis nec nulla vitae laoreet. Ut aliquet libero vitae nulla rhoncus, nec tempus sem posuere. Vestibulum maximus vitae risus in imperdiet. Mauris faucibus, ligula eu viverra commodo, enim ligula imperdiet leo, sed iaculis massa mauris sit amet sem. Nullam consectetur eu ante id imperdiet. Curabitur sed nisi eleifend, vulputate libero in, rutrum libero. Donec leo lacus, faucibus vitae nisi facilisis, maximus posuere neque. Curabitur convallis vestibulum massa, eget varius risus ullamcorper a. Aenean commodo tincidunt libero ac pulvinar.
@@ -187,9 +202,14 @@
 
 
             </div>
-            </div>
+            <!-- end -->
 
-            <div class="clearfix"></div>
+
+        </div>
+
+        <!-- div to avoid 'float' issues -->
+        <div class="clearfix"></div>
+
     </section>
 
 
@@ -204,6 +224,7 @@
 
 <% include ../partials/scripts.ejs %>
 
+<!-- script for tabs -->
 <script type="text/javascript" src="/js/info-tabs.js"></script>
 
 </body>

@@ -20,10 +20,8 @@ const app = express();
 //tell express to use sessions
 app.use(session({secret: 'example'}));
 
-//Set session as true for testing
-// session.loggedin = true;
-// session.username = "genericuser033";
 
+// Node.js body parsing middleware
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -31,8 +29,10 @@ app.use(bodyParser.urlencoded({
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
-//Set folder for static files (css/js/json/img)
+// Set folder for static files (css/js/json/img)
 app.use(express.static("public"));
+
+
 
 var db;
 
@@ -60,6 +60,11 @@ app.get('/', function(req,res) {
 
 // map page
 app.get('/munromap', function(req,res) {
+
+    res.render('pages/map');
+
+
+    // BELOW CODE: TESTING
 
     /*
     //if user not logged in - don't show "bagged" marker
@@ -97,7 +102,7 @@ app.get('/munromap', function(req,res) {
     var userSession = req.session;
     userSession.username = "genericuser033";
     */
-    var mTest;
+    // var mTest;
 /*
     db.collection('munros').find({"name": "Ben Nevis"}).toArray(function(err,result){
         mTest = JSON.stringify(result);
@@ -117,21 +122,22 @@ app.get('/munromap', function(req,res) {
     // });
 
 
-    res.render('pages/map');
+    // res.render('pages/map');
 
-
-
+    // END TEST CODE
 
 });
 
 
+// Get session.loggedin value (boolean)
 app.get('/getsession', function(req,res) {
     var sess = req.session.loggedin;
     res.send(sess);
 });
 
 
-
+// Return Munro information from MongoDB as JSON
+// To set up Map and List Accordion
 app.get('/munros', function(req,res) {
     db.collection('munros').find().toArray(function(err,result) {
         // console.log(result);
@@ -139,6 +145,9 @@ app.get('/munros', function(req,res) {
     });
 });
 
+
+
+// Get user 'bagged' munros from MongoDB
 app.get('/usermunros', function(req,res) {
 
     // console.log(req.session.username);
@@ -158,7 +167,8 @@ app.get('/usermunros', function(req,res) {
 
 
 // WEATHER API ROUTES
-
+// Client-Side Code (public/weather and public/js/jsonmap)
+/*
 var key = "key=b02b078d-1b64-44b3-90c7-3caacdbd442b";
 
 app.get('/weather', function(req,res){
@@ -168,7 +178,7 @@ app.get('/weather', function(req,res){
 app.get('/getsitelist',function(req,res){
 
 });
-
+*/
 
 
 
@@ -182,14 +192,17 @@ app.get('/munrolist', function(req,res) {
 
 
 // add munro to user list
+// get munro id using post - get munro from database - add to user 'bagged' field
 app.post('/bagmunro', function(req,res) {
     var mId = parseInt(req.body.id);
 
     // db.collection('users').update({"username":req.session.username},{$addToSet: {"bagged": {$each :[munro]}}});
 
+    // find munro in db collection
     db.collection('munros').find().toArray(function(err,result) {
         if(err) throw err;
         var munro = result[mId].name;
+        // add munro to user 'bagged' array field
         db.collection('users').update({"username":req.session.username},{$addToSet: {"bagged": munro}});
     });
 
@@ -199,18 +212,22 @@ app.post('/bagmunro', function(req,res) {
 });
 
 // remove munro from user list
+// get munro id using post - get munro from database - remove from user 'bagged' field
 app.post('/removemunro', function(req,res) {
     var mId = req.body.id;
 
     // db.collection('users').update({"username":req.session.username},{$pull: {"bagged": [munro]}});
     // console.log(munro);
 
+    // find munro in db collection
     db.collection('munros').find().toArray(function(err,result) {
         if(err) throw err;
         var munro = result[mId].name;
+        // remove from user 'bagged' array field
         db.collection('users').update({"username":req.session.username},{$pull: {"bagged": munro}});
     });
 
+    // send response
     res.send("Done");
 });
 
@@ -224,30 +241,41 @@ app.get('/contact', function(req,res) {
     res.render('pages/contact');
 });
 
+
+// render user profile page
 app.get('/profile', function(req,res) {
 
     var uname = req.session.username;
 
-    if (req.session.loggedin) {
+    // if user is logged in
+    if (req.session.loggedin) { // session.loggedin == true
+        // find user in db collection
         db.collection('users').findOne({"username":uname}, function(err,result) {
             if (err) throw err;
 
+            // send result from db query to profile page
             res.render('pages/profile', {
                 "user": result
             });
 
         });
     }
-    else {
+    else { // session.loggedin == false
+        // redirect user to index
         res.redirect('/');
     }
 
 
 });
 
+
+// user logout
 app.get('/logout', function(req,res) {
+    // set session.loggedin to false
     req.session.loggedin = false;
+    // destroy session
     req.session.destroy();
+    // redirect to index
     res.redirect('/');
 });
 
@@ -258,13 +286,14 @@ app.get('/logout', function(req,res) {
 app.post('/dologin', function(req,res){
     console.log(JSON.stringify(req.body));
 
-    var email = req.body.email;
+    // use body-parser to get user login credentials
+    var username = req.body.username;
     var pword = req.body.password;
 
-    console.log(email);
+    console.log(username);
     console.log(pword);
 
-    db.collection('users').findOne({"email":email}, function(err,result) {
+    db.collection('users').findOne({"username":username}, function(err,result) {
 
         // throw err if err
         if (err) throw err;

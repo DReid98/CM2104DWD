@@ -205,7 +205,7 @@ footer div {
     */
 
     .header {
-        height: 500px;
+        height: 80vh;
     }
 
     .logo {
@@ -213,7 +213,7 @@ footer div {
     }
 
     .parallax {
-        height: 50%;
+        height: 80vh;
     }
     
     nav {

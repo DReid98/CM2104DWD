@@ -79,6 +79,7 @@ function checkLogin() {
                 message.innerHTML = result;
             }
             else {
+                message.innerHTML = "";
                 $('#log-btn').attr("disabled","false");
             }
 

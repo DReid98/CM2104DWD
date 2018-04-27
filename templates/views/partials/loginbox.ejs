@@ -1,7 +1,7 @@
 
 <!--LOGIN BOX - MODAL -->
 <div id="login" class="modal">
-    <form id="login-form" class="modal-content animate" action="/dologin" method="POST">
+    <form id="login-form" class="modal-content animate" action="/dologin" method="POST" onsubmit="checkLogin()">
         <div class="imgcontainer">
             <span onclick="closeBox('#login')" class="close" title="Close Modal">&times;</span>
             <!--onclick="document.getElementById('login').style.display='none'"-->

@@ -284,6 +284,8 @@ app.get('/logout', function(req,res) {
 // ----- LOGIN -----
 
 app.post('/dologin', function(req,res){
+
+    /*
     // console.log(JSON.stringify(req.body));
 
     // use body-parser to get user login credentials
@@ -325,9 +327,21 @@ app.post('/dologin', function(req,res){
 
 
     });
+    */
+
+    var username = req.body.username;
+    var pword = req.body.password;
+
+    req.session.loggedin = true;
+    var sess = req.session;
+    sess.username = result.username;
+
+    res.redirect('/profile');
 
 });
 
+
+// LOGIN - CHECK USERNAME LIVE
 
 app.post('/checkusername', function(req,res) {
     var uname = req.body.username;
@@ -341,12 +355,59 @@ app.post('/checkusername', function(req,res) {
             res.send();
         }
         else {
-            res.send("Username not found");
+            res.send("USERNAME NOT FOUND");
         }
 
     });
 
     // res.send("Printed");
+
+});
+
+// LOGIN - CHECK PASSWORD LIVE
+
+app.post('/checklogin', function(req,res) {
+    // use body-parser to get user login credentials
+    var username = req.body.username;
+    var pword = req.body.password;
+
+    // console.log(username);
+    // console.log(pword);
+
+    // Get user from MongoDB
+    db.collection('users').findOne({"username":username}, function(err,result) {
+
+        // throw err if err
+        if (err) throw err;
+
+
+        // if username not found, redirect to index
+        if (!result) {
+            // openBox('#login');
+            // console.log("NOT FOUND");
+            res.send("USERNAME NOT FOUND");
+            return;
+        }
+
+        if (pword) {
+            // if username found, check password
+            if (result.password == pword) {
+                console.log("FOUND");
+                req.session.loggedin = true;
+                var sess = req.session;
+                sess.username = result.username;
+
+                // if password matches, redirect to profile
+                res.send();
+            }
+            else { // if password doesn't match, redirect to index
+                console.log("WRONG PASSWORD ?");
+                res.send("PASSWORD INCORRECT");
+            }
+        }
+
+
+    });
 
 });
 

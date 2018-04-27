@@ -49,10 +49,37 @@ function checkUsername() {
         success: function(result) {
             console.log("RESULT:" + result);
             if (result) {
+                message.innerHTML = result.toUpperCase();
+            }
+            else {
+                // do nothing ...
+            }
+
+        }
+    })
+
+}
+
+function checkLogin() {
+    var uname = document.getElementById('login-username').value;
+    var pword = document.getElementById('login-password').value;
+
+    var message = document.getElementById('login-message');
+
+    $.ajax({
+        type: "POST",
+        url: "/checklogin",
+        data: {
+            "username": uname,
+            "password": pword
+        },
+        success: function(result) {
+            console.log("RESULT:" + result);
+            if (result) {
                 message.innerHTML = result;
             }
             else {
-                message.innerHTML = "Username Accepted";
+                $('#log-btn').attr("disabled","false");
             }
 
         }

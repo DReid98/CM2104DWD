@@ -12,13 +12,13 @@
             <h3 class="boxtitle">Login</h3>
 
             <!-- enter username and password to log in -->
-            <input type="text" placeholder="Enter Username" name="username" id="login-username" onfocusout="checkUsername()" required>
-            <input type="password" placeholder="Enter Password" name="password" id="login-password" required>
+            <input type="text" placeholder="Enter Username" name="username" id="login-username" onfocusout="checkLogin()" required>
+            <input type="password" placeholder="Enter Password" name="password" id="login-password" onfocusout="checkLogin()" required>
 
             <!-- Display any login messages - NOT IMPLEMENTED -->
             <p id="login-message"></p>
 
-            <button class="log-btn" type="submit" disabled>Login</button>
+            <button id="log-btn" class="log-btn" type="submit" disabled>Login</button>
 
             <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me

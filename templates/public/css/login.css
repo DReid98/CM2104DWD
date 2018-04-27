@@ -117,6 +117,14 @@ span.psw {
     cursor: pointer;
 }
 
+/* Login Message */
+
+#login-message {
+    width: 100%;
+    text-align: center;
+}
+
+
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;

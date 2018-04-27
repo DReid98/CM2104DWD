@@ -38,6 +38,8 @@ function checkLogin() {
 function checkUsername() {
     var uname = document.getElementById('login-username').value;
 
+    var message = document.getElementById('login-message');
+
     $.ajax({
         type: "POST",
         url: "/checkusername",
@@ -47,10 +49,10 @@ function checkUsername() {
         success: function(result) {
             console.log("RESULT:" + result);
             if (result) {
-                $('#login-message').innerHTML = result;
+                message.innerHTML = result;
             }
             else {
-                $('#login-message').innerHTML = "Username Accepted";
+                message.innerHTML = "Username Accepted";
             }
 
         }

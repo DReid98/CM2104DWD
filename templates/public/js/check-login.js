@@ -45,6 +45,7 @@ function checkUsername() {
             "username": uname
         },
         success: function(result) {
+            console.log("RESULT:" + result);
             if (result) {
                 $('#login-message').innerHTML = result;
             }

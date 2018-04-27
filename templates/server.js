@@ -388,6 +388,9 @@ app.post('/checklogin', function(req,res) {
             res.send("USERNAME NOT FOUND");
             return;
         }
+        else {
+            res.send();
+        }
 
         if (pword) {
             // if username found, check password

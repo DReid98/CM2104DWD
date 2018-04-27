@@ -329,7 +329,7 @@ app.post('/dologin', function(req,res){
 });
 
 
-app.post('/checklogin', function(req,res) {
+app.post('/checkusername', function(req,res) {
     var uname = req.body.username;
 
     console.log(uname);

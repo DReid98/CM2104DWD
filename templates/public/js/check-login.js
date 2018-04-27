@@ -8,6 +8,7 @@
 
 // JS for live/client-side login checks
 
+/*
 function checkLogin() {
 
     var email = document.getElementById('login-username').innerText;
@@ -28,6 +29,29 @@ function checkLogin() {
             else {
                 document.getElementById('login-form').submit();
             }
+        }
+    })
+
+}
+*/
+
+function checkUsername() {
+    var uname = document.getElementById('login-username').innerText;
+
+    $.ajax({
+        type: "POST",
+        url: "/checkusername",
+        data: {
+            "username": uname
+        },
+        success: function(result) {
+            if (result) {
+                $('#login-message').innerText = result;
+            }
+            else {
+                $('#login-message').innerText = "Username Accepted";
+            }
+
         }
     })
 

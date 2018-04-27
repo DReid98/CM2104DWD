@@ -330,13 +330,23 @@ app.post('/dologin', function(req,res){
 
 
 app.post('/checklogin', function(req,res) {
-    var e = req.body.email;
-    var p = req.body.password;
+    var uname = req.body.username;
 
-    console.log(e);
-    console.log(p);
+    console.log(uname);
 
-    res.send("Printed");
+    db.collection('users').findOne({"username":uname},function(err,result) {
+        if (err) throw err;
+
+        if (result) {
+            res.send();
+        }
+        else {
+            res.send("Username not found");
+        }
+
+    });
+
+    // res.send("Printed");
 
 });
 

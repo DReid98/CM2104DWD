@@ -1,7 +1,7 @@
 
 <!--LOGIN BOX - MODAL -->
 <div id="login" class="modal">
-    <form id="login-form" class="modal-content animate" action="/dologin" method="POST" onsubmit="checkLogin()">
+    <form id="login-form" class="modal-content animate" action="/dologin" method="POST">
         <div class="imgcontainer">
             <span onclick="closeBox('#login')" class="close" title="Close Modal">&times;</span>
             <!--onclick="document.getElementById('login').style.display='none'"-->
@@ -12,13 +12,13 @@
             <h3 class="boxtitle">Login</h3>
 
             <!-- enter username and password to log in -->
-            <input type="text" placeholder="Enter Username" name="username" id="login-username" required>
-            <input type="password" placeholder="Enter Password" name="password" id="login-password" required>
+            <input type="text" placeholder="Enter Username" name="username" id="login-username" onfocusout="checkUsername()" required>
+            <input type="password" placeholder="Enter Password" name="password" id="login-password" onfocusout="checkPassword()" required>
 
             <!-- Display any login messages - NOT IMPLEMENTED -->
             <p id="login-message"></p>
 
-            <button class="log-btn" type="submit">Login</button>
+            <button class="log-btn" type="submit" disabled>Login</button>
 
             <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me

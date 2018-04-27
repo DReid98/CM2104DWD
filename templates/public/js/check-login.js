@@ -60,6 +60,35 @@ function checkUsername() {
 
 }
 
+
+$('#login-form').submit(function() {
+    var uname = document.getElementById('login-username').value;
+    var pword = document.getElementById('login-password').value;
+
+    var message = document.getElementById('login-message');
+
+    $.ajax({
+        type: "POST",
+        url: "/checklogin",
+        data: {
+            "username": uname,
+            "password": pword
+        },
+        success: function(result) {
+            console.log("RESULT:" + result);
+            if (result) {
+                message.innerHTML = result;
+                return false;
+            }
+            else {
+                message.innerHTML = "";
+            }
+
+        }
+    })
+});
+
+
 function checkLogin() {
     var uname = document.getElementById('login-username').value;
     var pword = document.getElementById('login-password').value;
@@ -80,7 +109,7 @@ function checkLogin() {
             }
             else {
                 message.innerHTML = "";
-                $('#log-btn').attr("disabled","false");
+                document.getElementById('login-form').submit();
             }
 
         }

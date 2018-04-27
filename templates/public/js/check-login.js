@@ -10,8 +10,8 @@
 
 function checkLogin() {
 
-    var email = document.getElementById('login-email');
-    var pword = document.getElementById('login-password');
+    var email = document.getElementById('login-username').innerText;
+    var pword = document.getElementById('login-password').innerText;
 
     $.ajax({
         type: "GET",

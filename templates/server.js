@@ -328,15 +328,17 @@ app.post('/dologin', function(req,res){
 
 });
 
-/*
+
 app.post('/checklogin', function(req,res) {
     var e = req.body.email;
     var p = req.body.password;
 
-    // db.collection('users').findOne()
+    console.log(e);
+    console.log(p);
+
+    res.send("Printed");
 
 });
-*/
 
 // ----- REGISTER NEW USER -----
 

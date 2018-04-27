@@ -35,6 +35,7 @@ function checkLogin() {
 }
 */
 
+/*
 function checkUsername() {
     var uname = document.getElementById('login-username').value;
 
@@ -116,3 +117,4 @@ function checkLogin() {
     })
 
 }
+*/

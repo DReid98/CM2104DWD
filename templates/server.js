@@ -285,7 +285,7 @@ app.get('/logout', function(req,res) {
 
 app.post('/dologin', function(req,res){
 
-    /*
+
     // console.log(JSON.stringify(req.body));
 
     // use body-parser to get user login credentials
@@ -327,8 +327,9 @@ app.post('/dologin', function(req,res){
 
 
     });
-    */
 
+
+    /*
     var username = req.body.username;
     var pword = req.body.password;
 
@@ -337,12 +338,14 @@ app.post('/dologin', function(req,res){
     sess.username = result.username;
 
     res.redirect('/profile');
+    */
 
 });
 
 
 // LOGIN - CHECK USERNAME LIVE
-
+// NOT IMPLEMENTED - DIDN'T WORK
+/*
 app.post('/checkusername', function(req,res) {
     var uname = req.body.username;
 
@@ -363,9 +366,11 @@ app.post('/checkusername', function(req,res) {
     // res.send("Printed");
 
 });
+*/
 
 // LOGIN - CHECK PASSWORD LIVE
-
+// NOT IMPLEMENTED - DIDN'T WORK
+/*
 app.post('/checklogin', function(req,res) {
     // use body-parser to get user login credentials
     var username = req.body.username;
@@ -413,6 +418,7 @@ app.post('/checklogin', function(req,res) {
     });
 
 });
+*/
 
 // ----- REGISTER NEW USER -----
 
